@@ -1,6 +1,6 @@
 <div class="tutorial_listing">
   <h2>Edit: <%= @biotut.title %></h2>
-  <div style="width: 600px;">
+  <div style="width: 1000px;">
     <%= form_for(:biology_tutorial, :url => {:action => 'create'}) do |f| %>
       <table class="table table-condensed">
         <tr>
@@ -17,7 +17,7 @@
         </tr>
         <tr>
           <th><%= f.label(:content) %></th>
-          <td><%= f.text_field(:content) %></td>
+          <td><%= f.text_area(:content, :size => '100x10') %></td>
         </tr>
         <tr>
           <th><%= f.label(:published) %></th>

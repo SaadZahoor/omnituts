@@ -1,2 +1,25 @@
-<h1>PhysicsTutorials#index</h1>
-<p>Find me in app/views/physics_tutorials/index.html.erb</p>
+<div class="tutorials_listing">
+  <h2>Physics Tutorials</h2>
+  <%= link_to("Add New Physics Tutorial", {:action => 'new'}, :class => 'btn btn-primary') %>
+  <%= render(:partial => 'table_header') %>
+    <tbody>
+      <% @physicstuts.each do |physicstut| %>
+        <tr>
+          <td style="text-align: center;"><%= physicstut.id %></td>
+          <td style="text-align: center;"><%= physicstut.title %></td>
+          <td style="text-align: center;"><%= physicstut.author_id %></td>
+          <td style="text-align: center;"><%= physicstut.permalink %></td>
+          <td style="text-align: center;"><%= physicstut.published ? 'Yes' : 'No' %></td>
+          <td style="text-align: center;">
+            <%= link_to("Show", {:action => 'show', :id => physicstut.id}) %>
+          </td>
+          <td style="text-align: center;">
+            <%= link_to("Edit", {:action => 'edit', :id => physicstut.id}) %>
+          </td>
+          <td style="text-align: center;">
+            <%= link_to("Delete", {:action => 'delete', :id => physicstut.id}) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+</div>

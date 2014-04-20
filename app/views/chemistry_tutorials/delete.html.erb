@@ -1,2 +1,8 @@
-<h1>ChemistryTutorials#delete</h1>
-<p>Find me in app/views/chemistry_tutorials/delete.html.erb</p>
+<div style="margin-top: 10px;">
+  <p class="lead" style="margin-bottom: 5px;">Delete: <strong><%=@chemtut.title%></strong></p>
+  <%= form_tag({:action => 'destroy', :id => @chemtut.id}) do |f| %>
+    <p>Are you sure you want to delete <%= @chemtut.title %> permanently?</p>
+    <%= submit_tag("Delete Tutorial", :class => 'btn btn-primary') %>
+  <% end %>
+  <%= link_to("<< Back to index", {:action => 'index'}) %>
+</div>

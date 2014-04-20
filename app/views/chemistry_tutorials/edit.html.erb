@@ -1,2 +1,27 @@
-<h1>ChemistryTutorials#edit</h1>
-<p>Find me in app/views/chemistry_tutorials/edit.html.erb</p>
+<div class="tutorial_listing">
+  <h2>Edit: <%= @chemtut.title %></h2>
+  <div style="width: 1000px;">
+    <%= form_for(:chemistry_tutorial, :url => {:action => 'update', :id => @chemtut.id}) do |f| %>
+      <table class="table table-condensed">
+        <tr>
+          <th><%= f.label(:title) %></th>
+          <td><%= f.text_field(:title) %></td>
+        </tr>
+        <tr>
+          <th><%= f.label(:permalink) %></th>
+          <td><%= f.text_field(:permalink) %></td>
+        </tr>
+        <tr>
+          <th><%= f.label(:content) %></th>
+          <td><%= f.text_area(:content, :size => '100x10') %></td>
+        </tr>
+        <tr>
+          <th><%= f.label(:published) %></th>
+          <td><%= f.check_box(:published) %></td>
+        </tr>
+      </table>
+      <%= submit_tag("Update Tutorial", :class => 'btn btn-primary') %>
+    <% end %>
+  </div>
+  <%= link_to("<< Back to index", {:action => 'index'}) %>
+</div>

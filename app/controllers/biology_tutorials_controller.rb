@@ -3,7 +3,7 @@ class BiologyTutorialsController < ApplicationController
   layout "tutorial_listing"
 
   def index
-    @bio_tuts = BiologyTutorial.all
+    @bio_tuts = BiologyTutorial.sorted
   end
 
   def show

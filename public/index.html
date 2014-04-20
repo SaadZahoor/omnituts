@@ -9,22 +9,17 @@
   <div class="navbar navbar-inverse navbar-static-top">
     <div class="navbar-inner">
       <div class="container">
-        <%= link_to("Omnituts", "/", :class => 'brand') %>
+        <a class="brand active">Omnituts</a>
         <ul class="nav">
-            <li class="active"><%= link_to("Biology", {:controller => :biology_tutorials, :action => 'index'}) %></li>
-            <li><%= link_to("Chemistry", {:controller => :chemistry_tutorials, :action => 'index'}) %></li>
-            <li><%= link_to("Physics", {:controller => :physics_tutorials, :action => 'index'}) %></li>
+            <li><a href="/biology_tutorials">Biology</a></li>
+            <li><a href="/chemistry_tutorials">Chemistry</a></li>
+            <li><a href="/physics_tutorials">Physics</a></li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="container">
-    <% if !flash[:notice].blank? %>
-      <div class="alert alert-success" style="margin-top: 15px; margin-bottom: 0px;">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-    <%= yield %>
+  <div class="container" style="margin-top: 10px;">
+    <p class="lead">We're online!</p>
   </div>
 </body>
 </html>

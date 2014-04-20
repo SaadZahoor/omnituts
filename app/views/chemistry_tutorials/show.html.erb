@@ -1,2 +1,28 @@
-<h1>ChemistryTutorials#show</h1>
-<p>Find me in app/views/chemistry_tutorials/show.html.erb</p>
+<div class="tutorial_listing">
+  <h2><%= @chemtut.title %></h2>
+  <div style="width: 600px;">
+    <table class="table table-condensed">
+      <tr>
+        <th>ID</th>
+        <td><%= @chemtut.id %></td>
+      </tr>
+      <tr>
+        <th>Author ID</th>
+        <td><%= @chemtut.author_id %></td>
+      </tr>
+      <tr>
+        <th>Permalink</th>
+        <td><%= @chemtut.permalink %></td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td><%= @chemtut.content %></td>
+      </tr>
+      <tr>
+        <th>Published?</th>
+        <td><%= @chemtut.published ? 'Yes' : 'No' %></td>
+      </tr>
+    </table>
+  </div>
+  <%= link_to("<< Back to index", {:action => 'index'}) %>
+</div>
