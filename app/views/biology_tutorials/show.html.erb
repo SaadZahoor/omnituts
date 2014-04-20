@@ -1,0 +1,28 @@
+<div class="tutorial_listing">
+  <h2><%= @bio_tut.title %></h2>
+  <div style="width: 600px;">
+    <table class="table table-condensed">
+      <tr>
+        <th>ID</th>
+        <td><%= @bio_tut.id %></td>
+      </tr>
+      <tr>
+        <th>Author ID</th>
+        <td><%= @bio_tut.author_id %></td>
+      </tr>
+      <tr>
+        <th>Permalink</th>
+        <td><%= @bio_tut.permalink %></td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td><%= @bio_tut.content %></td>
+      </tr>
+      <tr>
+        <th>Published?</th>
+        <td><%= @bio_tut.published ? 'Yes' : 'No' %></td>
+      </tr>
+    </table>
+  </div>
+  <%= link_to("<< Back to index", {:action => 'index'}) %>
+</div>

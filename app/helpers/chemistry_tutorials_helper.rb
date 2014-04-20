@@ -1,0 +1,2 @@
+module ChemistryTutorialsHelper
+end

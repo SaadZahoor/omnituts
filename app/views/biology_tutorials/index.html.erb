@@ -1,0 +1,25 @@
+<div class="tutorials_listing">
+  <h2>Biology Tutorials</h2>
+  <%= link_to("Add New Biology Tutorial", {:action => 'new'}, :class => 'btn btn-primary') %>
+  <%= render(:partial => 'table_header') %>
+    <tbody>
+      <% @bio_tuts.each do |bio_tut| %>
+        <tr>
+          <td style="text-align: center;"><%= bio_tut.id %></td>
+          <td style="text-align: center;"><%= bio_tut.title %></td>
+          <td style="text-align: center;"><%= bio_tut.author_id %></td>
+          <td style="text-align: center;"><%= bio_tut.permalink %></td>
+          <td style="text-align: center;"><%= bio_tut.published ? 'Yes' : 'No' %></td>
+          <td style="text-align: center;">
+            <%= link_to("Show", {:action => 'show', :id => bio_tut.id}) %>
+          </td>
+          <td style="text-align: center;">
+            <%= link_to("Edit", {:action => 'edit', :id => bio_tut.id}) %>
+          </td>
+          <td style="text-align: center;">
+            <%= link_to("Delete", {:action => 'delete', :id => bio_tut.id}) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+</div>

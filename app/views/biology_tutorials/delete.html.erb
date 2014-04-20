@@ -1,0 +1,8 @@
+<div style="margin-top: 10px;">
+  <p class="lead" style="margin-bottom: 5px;">Delete: <strong><%=@biotut.title%></strong></p>
+  <%= form_tag({:action => 'destroy', :id => @biotut.id}) do |f| %>
+    <p>Are you sure you want to delete <%= @biotut.title %> permanently?</p>
+    <%= submit_tag("Delete Tutorial", :class => 'btn btn-primary') %>
+  <% end %>
+  <%= link_to("<< Back to index", {:action => 'index'}) %>
+</div>

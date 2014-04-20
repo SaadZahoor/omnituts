@@ -1,0 +1,31 @@
+<div class="tutorial_listing">
+  <h2>Edit: <%= @biotut.title %></h2>
+  <div style="width: 600px;">
+    <%= form_for(:biology_tutorial, :url => {:action => 'create'}) do |f| %>
+      <table class="table table-condensed">
+        <tr>
+          <th><%= f.label(:author_id) %></th>
+          <td><%= f.text_field(:author_id) %></td>
+        </tr>
+        <tr>
+          <th><%= f.label(:title) %></th>
+          <td><%= f.text_field(:title) %></td>
+        </tr>
+        <tr>
+          <th><%= f.label(:permalink) %></th>
+          <td><%= f.text_field(:permalink) %></td>
+        </tr>
+        <tr>
+          <th><%= f.label(:content) %></th>
+          <td><%= f.text_field(:content) %></td>
+        </tr>
+        <tr>
+          <th><%= f.label(:published) %></th>
+          <td><%= f.check_box(:published) %></td>
+        </tr>
+      </table>
+      <%= submit_tag("Create Tutorial", :class => 'btn btn-primary') %>
+    <% end %>
+  </div>
+  <%= link_to("<< Back to index", {:action => 'index'}) %>
+</div>
