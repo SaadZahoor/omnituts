@@ -27,13 +27,6 @@ ActiveRecord::Schema.define(version: 20140421204938) do
   add_index "admins", ["email"], name: "index_admins_on_email", using: :btree
   add_index "admins", ["username"], name: "index_admins_on_username", using: :btree
 
-  create_table "admins_tutorials", id: false, force: true do |t|
-    t.integer "admin_id"
-    t.integer "tutorial_id"
-  end
-
-  add_index "admins_tutorials", ["admin_id", "tutorial_id"], name: "index_admins_tutorials_on_admin_id_and_tutorial_id", using: :btree
-
   create_table "course_enrollments", force: true do |t|
     t.integer  "user_id"
     t.integer  "course_id"
@@ -57,14 +50,15 @@ ActiveRecord::Schema.define(version: 20140421204938) do
   add_index "courses", ["course_name"], name: "index_courses_on_course_name", using: :btree
 
   create_table "tutorials", force: true do |t|
-    t.integer  "course_id",                                      null: false
-    t.string   "tut_title",     default: "Tutorial title",       null: false
-    t.string   "tut_content",   default: "Lots to learn about!", null: false
-    t.string   "num_of_admins", default: "1",                    null: false
+    t.integer  "course_id",                                    null: false
+    t.integer  "author_id"
+    t.string   "tut_title",   default: "Tutorial title",       null: false
+    t.string   "tut_content", default: "Lots to learn about!", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "tutorials", ["author_id"], name: "index_tutorials_on_author_id", using: :btree
   add_index "tutorials", ["course_id"], name: "index_tutorials_on_course_id", using: :btree
   add_index "tutorials", ["tut_title"], name: "index_tutorials_on_tut_title", using: :btree
 

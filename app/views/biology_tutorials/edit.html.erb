@@ -1,0 +1,26 @@
+<%= form_for(:tut, :url => {:action => 'update', :id => @tut.id}) do |f| %>
+
+  <strong><%= f.label(:course_id, "Course") %>: </strong><br />
+  <%= f.select(:course_id, @courses.map { |c| [c.course_name, c.id] }) %><i class="fa fa-toggle-down form-course-toggle"></i><br />
+
+  <br />
+
+  <strong><%= f.label(:tut_title, "Tutorial Title") %>: </strong><br />
+  <%= f.text_field(:tut_title) %><br />
+
+  <br />
+
+  <strong><%= f.label(:tut_content, "Tutorial Content") %>: </strong><br />
+  <%= f.text_area(:tut_content, :size => '100x30') %>
+
+  <br /><br />
+
+  <%= submit_tag("Update Tutorial", :class => 'btn primary') %>  
+
+<% end %>
+
+<br /><br />
+
+<%= link_to("<< Back to tutorials", {:action => 'index'}) %>
+<br />
+<br />

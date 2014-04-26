@@ -1,0 +1,208 @@
+/***********************************************
+            UNIVERSAL VIEW STYLES
+***********************************************/
+
+.tut-back-link {
+  border-bottom: 1px dotted #008FDB;
+  font-style: italic;
+  text-decoration: none;
+  color: #008FDB;
+}
+.button-link {
+  display: inline-block;
+  padding: 7px 20px;
+  margin-right: 5px;
+  width: auto;
+  background-color: #008FDB;
+  border: 1px solid #006DA8;
+  border-radius: 2px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+}
+.button-link:hover { background-color: #007BBD; }
+.button-link:last-child { margin-right: 0px; }
+@media screen and (max-width: 680px) {
+  .button-link {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    text-align: center;
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+}
+
+/***********************************************
+                INDEX ACTION
+***********************************************/
+
+.index-action-tuts-introduction {
+  font-weight: bold;
+  font-size: 28px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.index-action-tut-container {
+  width: 100%;
+  margin-bottom: 7px;
+  padding: 5px 20px;
+  background-color: #efefef;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+}
+.index-action-tut-container:hover { background-color: #ddd; border: 1px solid #ccc; }
+.index-action-tut-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+.index-action-tut-upload-info {
+  margin-left: 5px;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: italic;
+  color: #666;
+}
+.index-action-tut-actions {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  a {
+    display: inline-block;
+    padding: 7px 20px;
+    margin-right: 5px;
+    width: 75px;
+    background-color: #008FDB;
+    border: 1px solid #006DA8;
+    border-radius: 2px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+  }
+  a:hover { /*background-color: #005D8F;*/ background-color: #007BBD; }
+  a:last-child { margin-right: 0px; }
+}
+@media screen and (max-width: 680px) {
+  .index-action-tut-container { width: 100%; }
+  .index-action-tut-actions {
+    a {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 15px 20px;
+      text-align: center;
+      margin-right: 0px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+/***********************************************
+                  VIEW ACTION
+***********************************************/
+
+.view-action-tut-container {
+  margin-top: 0px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.view-action-tut-title {
+  margin-bottom: -5px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.view-action-tut-content { font-size: 16px; }
+
+/***********************************************
+                DELETE ACTION
+***********************************************/
+
+.delete-action-text { font-weight: bold; }
+.delete-action-tut-title { font-size: 20px; }
+.delete-action-warning-text {
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+  color: #AA0000;
+}
+@media screen and (max-width: 680px) {
+  .delete-action-text, .delete-action-tut-title, .delete-action-warning-text { text-align: center; }
+  .delete-action-warning-text { margin-top: -10px; }
+}
+
+/***********************************************
+                FORM STYLES
+***********************************************/
+input[type=text] {
+  -webkit-appearance: none;
+  border-radius: 3px;
+  border: 1px solid #aaa;
+  width: 200px;
+  height: 30px;
+  padding-left: 11px;
+  font-family: Helvetica;
+  font-size: 14px;
+  background-color: #ededed;
+}
+input[type=text]:focus { outline: none; }
+select {
+  -webkit-appearance: none;
+  border-radius: 3px;
+  border: 1px solid #aaa;
+  width: 200px;
+  height: 30px;
+  padding-left: 11px;
+  font-family: Helvetica;
+  font-size: 14px;
+  background: #ededed;
+  background: -moz-linear-gradient(top,  #ededed 0%, #d3d3d3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#d3d3d3));
+  background: -webkit-linear-gradient(top,  #ededed 0%,#d3d3d3 100%);
+  background: -o-linear-gradient(top,  #ededed 0%,#d3d3d3 100%);
+  background: -ms-linear-gradient(top,  #ededed 0%,#d3d3d3 100%);
+  background: linear-gradient(to bottom,  #ededed 0%,#d3d3d3 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#d3d3d3',GradientType=0 );
+}
+.dropdown-arrow {
+  position: relative;
+  left: -19px;
+  top: -2px;
+  color: #222222;
+}
+textarea {
+  -webkit-appearance: none;
+  border-radius: 3px;
+  border: 1px solid #aaa;
+  padding: 11px;
+  width: 100%;
+  height: 250px;
+  box-sizing: border-box;
+  font-family: Helvetica;
+  font-size: 14px;
+  background-color: #ededed;
+}
+textarea:focus { outline: none; }
+.form-label {
+  display: block;
+  margin-left: 5px;
+  margin-bottom: -15px; 
+  font-weight: bold;
+}
+.form-submit-button {
+  -webkit-appearance: none;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 5px;
+  width: 150px;
+  background-color: #008FDB;
+  border: 1px solid #006DA8;
+  border-radius: 2px;
+  font-family: Helvetica;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+}
+.form-submit-button:hover { background-color: #007BBD; }
+.form-submit-button:last-child { margin-right: 0px; }
+@media screen and (max-width: 680px) { .form-submit-button { width: 100%; text-align: center; } }

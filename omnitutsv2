@@ -1,0 +1,1942 @@
+Last login: Mon Apr 21 15:05:59 on ttys000
+~% cd desktop/files/omnituts;
+omnituts% ls
+tut_resources
+omnituts% rails new omnituts -d mysql
+      create  
+      create  README.rdoc
+      create  Rakefile
+      create  config.ru
+      create  .gitignore
+      create  Gemfile
+      create  app
+      create  app/assets/javascripts/application.js
+      create  app/assets/stylesheets/application.css
+      create  app/controllers/application_controller.rb
+      create  app/helpers/application_helper.rb
+      create  app/views/layouts/application.html.erb
+      create  app/assets/images/.keep
+      create  app/mailers/.keep
+      create  app/models/.keep
+      create  app/controllers/concerns/.keep
+      create  app/models/concerns/.keep
+      create  bin
+      create  bin/bundle
+      create  bin/rails
+      create  bin/rake
+      create  config
+      create  config/routes.rb
+      create  config/application.rb
+      create  config/environment.rb
+      create  config/environments
+      create  config/environments/development.rb
+      create  config/environments/production.rb
+      create  config/environments/test.rb
+      create  config/initializers
+      create  config/initializers/backtrace_silencers.rb
+      create  config/initializers/filter_parameter_logging.rb
+      create  config/initializers/inflections.rb
+      create  config/initializers/mime_types.rb
+      create  config/initializers/secret_token.rb
+      create  config/initializers/session_store.rb
+      create  config/initializers/wrap_parameters.rb
+      create  config/locales
+      create  config/locales/en.yml
+      create  config/boot.rb
+      create  config/database.yml
+      create  db
+      create  db/seeds.rb
+      create  lib
+      create  lib/tasks
+      create  lib/tasks/.keep
+      create  lib/assets
+      create  lib/assets/.keep
+      create  log
+      create  log/.keep
+      create  public
+      create  public/404.html
+      create  public/422.html
+      create  public/500.html
+      create  public/favicon.ico
+      create  public/robots.txt
+      create  test/fixtures
+      create  test/fixtures/.keep
+      create  test/controllers
+      create  test/controllers/.keep
+      create  test/mailers
+      create  test/mailers/.keep
+      create  test/models
+      create  test/models/.keep
+      create  test/helpers
+      create  test/helpers/.keep
+      create  test/integration
+      create  test/integration/.keep
+      create  test/test_helper.rb
+      create  tmp/cache
+      create  tmp/cache/assets
+      create  vendor/assets/javascripts
+      create  vendor/assets/javascripts/.keep
+      create  vendor/assets/stylesheets
+      create  vendor/assets/stylesheets/.keep
+         run  bundle install
+Fetching gem metadata from https://rubygems.org/...........
+Fetching additional metadata from https://rubygems.org/..
+Resolving dependencies...
+Using rake (10.3.1)
+Using i18n (0.6.9)
+Using minitest (4.7.5)
+Using multi_json (1.9.2)
+Using thread_safe (0.3.3)
+Using tzinfo (0.3.39)
+Using activesupport (4.0.4)
+Using builder (3.1.4)
+Using erubis (2.7.0)
+Using rack (1.5.2)
+Using rack-test (0.6.2)
+Using actionpack (4.0.4)
+Using mime-types (1.25.1)
+Using polyglot (0.3.4)
+Using treetop (1.4.15)
+Using mail (2.5.4)
+Using actionmailer (4.0.4)
+Using activemodel (4.0.4)
+Using activerecord-deprecated_finders (1.0.3)
+Using arel (4.0.2)
+Using activerecord (4.0.4)
+Using bundler (1.5.1)
+Using coffee-script-source (1.7.0)
+Using execjs (2.0.2)
+Using coffee-script (2.2.0)
+Using thor (0.19.1)
+Using railties (4.0.4)
+Using coffee-rails (4.0.1)
+Using hike (1.2.3)
+Using jbuilder (1.5.3)
+Using jquery-rails (3.1.0)
+Using json (1.8.1)
+Using mysql2 (0.3.15)
+Using tilt (1.4.1)
+Using sprockets (2.11.0)
+Using sprockets-rails (2.0.1)
+Using rails (4.0.4)
+Using rdoc (4.1.1)
+Using sass (3.2.19)
+Using sass-rails (4.0.3)
+Using sdoc (0.4.0)
+Using turbolinks (2.2.2)
+Using uglifier (2.5.0)
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+omnituts% subl .
+omnituts% cd omnituts; subl.
+-bash: subl.: command not found
+omnituts% subl .
+omnituts% mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 189
+Server version: 5.6.12 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE omnituts_development;
+ERROR 1044 (42000): Access denied for user ''@'localhost' to database 'omnituts_development'
+mysql> exit
+Bye
+omnituts% mysql -u root -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+omnituts% mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 191
+Server version: 5.6.12 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE omnituts_development;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> exit
+Bye
+omnituts% clear
+
+omnituts% rails generate model Admin
+/Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:222:in `default_controller_and_action': controller name should not start with a slash (ArgumentError)
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:116:in `normalize_options!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:64:in `initialize'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1451:in `new'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1451:in `add_route'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1430:in `decomposed_match'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1411:in `block in match'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1402:in `each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1402:in `match'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:332:in `root'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1472:in `root'
+	from /Users/Robosaad/Desktop/files/omnituts/omnituts/config/routes.rb:3:in `block in <top (required)>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/route_set.rb:335:in `instance_exec'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/route_set.rb:335:in `eval_block'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/route_set.rb:313:in `draw'
+	from /Users/Robosaad/Desktop/files/omnituts/omnituts/config/routes.rb:1:in `<top (required)>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:223:in `load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:223:in `block in load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:214:in `load_dependency'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:223:in `load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:40:in `each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:16:in `reload!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/file_update_checker.rb:75:in `call'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/file_update_checker.rb:75:in `execute'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:27:in `updater'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:6:in `execute_if_updated'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/finisher.rb:69:in `block in <module:Finisher>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:30:in `instance_exec'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:30:in `run'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:55:in `block in run_initializers'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:150:in `block in tsort_each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:183:in `block (2 levels) in each_strongly_connected_component'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:219:in `each_strongly_connected_component_from'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:182:in `block in each_strongly_connected_component'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:180:in `each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:180:in `each_strongly_connected_component'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:148:in `tsort_each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:54:in `run_initializers'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application.rb:215:in `initialize!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/railtie/configurable.rb:30:in `method_missing'
+	from /Users/Robosaad/Desktop/files/omnituts/omnituts/config/environment.rb:5:in `<top (required)>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application.rb:189:in `require'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application.rb:189:in `require_environment!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands.rb:44:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+omnituts% bundle install
+Using rake (10.3.1)
+Using i18n (0.6.9)
+Using minitest (4.7.5)
+Using multi_json (1.9.2)
+Using thread_safe (0.3.3)
+Using tzinfo (0.3.39)
+Using activesupport (4.0.4)
+Using builder (3.1.4)
+Using erubis (2.7.0)
+Using rack (1.5.2)
+Using rack-test (0.6.2)
+Using actionpack (4.0.4)
+Using mime-types (1.25.1)
+Using polyglot (0.3.4)
+Using treetop (1.4.15)
+Using mail (2.5.4)
+Using actionmailer (4.0.4)
+Using activemodel (4.0.4)
+Using activerecord-deprecated_finders (1.0.3)
+Using arel (4.0.2)
+Using activerecord (4.0.4)
+Using hike (1.2.3)
+Using json (1.8.1)
+Using mysql2 (0.3.15)
+Using bundler (1.5.1)
+Using thor (0.19.1)
+Using railties (4.0.4)
+Using tilt (1.4.1)
+Using sprockets (2.11.0)
+Using sprockets-rails (2.0.1)
+Using rails (4.0.4)
+Using rdoc (4.1.1)
+Using sass (3.2.19)
+Using sass-rails (4.0.3)
+Using sdoc (0.4.0)
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+omnituts% rails generate model Admin
+/Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:222:in `default_controller_and_action': controller name should not start with a slash (ArgumentError)
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:116:in `normalize_options!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:64:in `initialize'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1451:in `new'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1451:in `add_route'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1430:in `decomposed_match'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1411:in `block in match'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1402:in `each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1402:in `match'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:332:in `root'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1472:in `root'
+	from /Users/Robosaad/Desktop/files/omnituts/omnituts/config/routes.rb:3:in `block in <top (required)>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/route_set.rb:335:in `instance_exec'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/route_set.rb:335:in `eval_block'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/route_set.rb:313:in `draw'
+	from /Users/Robosaad/Desktop/files/omnituts/omnituts/config/routes.rb:1:in `<top (required)>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:223:in `load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:223:in `block in load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:214:in `load_dependency'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:223:in `load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:40:in `each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:16:in `reload!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/file_update_checker.rb:75:in `call'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/file_update_checker.rb:75:in `execute'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:27:in `updater'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:6:in `execute_if_updated'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/finisher.rb:69:in `block in <module:Finisher>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:30:in `instance_exec'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:30:in `run'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:55:in `block in run_initializers'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:150:in `block in tsort_each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:183:in `block (2 levels) in each_strongly_connected_component'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:219:in `each_strongly_connected_component_from'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:182:in `block in each_strongly_connected_component'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:180:in `each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:180:in `each_strongly_connected_component'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:148:in `tsort_each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:54:in `run_initializers'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application.rb:215:in `initialize!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/railtie/configurable.rb:30:in `method_missing'
+	from /Users/Robosaad/Desktop/files/omnituts/omnituts/config/environment.rb:5:in `<top (required)>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application.rb:189:in `require'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application.rb:189:in `require_environment!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands.rb:44:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+omnituts% clear
+
+omnituts% rails generate model Admin
+/Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:235:in `default_controller_and_action': Missing :action key on routes definition, please check your routes. (ArgumentError)
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:116:in `normalize_options!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:64:in `initialize'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1451:in `new'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1451:in `add_route'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1430:in `decomposed_match'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1411:in `block in match'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1402:in `each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1402:in `match'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:332:in `root'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1472:in `root'
+	from /Users/Robosaad/Desktop/files/omnituts/omnituts/config/routes.rb:3:in `block in <top (required)>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/route_set.rb:335:in `instance_exec'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/route_set.rb:335:in `eval_block'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/route_set.rb:313:in `draw'
+	from /Users/Robosaad/Desktop/files/omnituts/omnituts/config/routes.rb:1:in `<top (required)>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:223:in `load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:223:in `block in load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:214:in `load_dependency'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:223:in `load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:40:in `each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:16:in `reload!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/file_update_checker.rb:75:in `call'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/file_update_checker.rb:75:in `execute'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:27:in `updater'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:6:in `execute_if_updated'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/finisher.rb:69:in `block in <module:Finisher>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:30:in `instance_exec'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:30:in `run'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:55:in `block in run_initializers'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:150:in `block in tsort_each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:183:in `block (2 levels) in each_strongly_connected_component'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:219:in `each_strongly_connected_component_from'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:182:in `block in each_strongly_connected_component'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:180:in `each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:180:in `each_strongly_connected_component'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:148:in `tsort_each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:54:in `run_initializers'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application.rb:215:in `initialize!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/railtie/configurable.rb:30:in `method_missing'
+	from /Users/Robosaad/Desktop/files/omnituts/omnituts/config/environment.rb:5:in `<top (required)>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application.rb:189:in `require'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application.rb:189:in `require_environment!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands.rb:44:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+omnituts% clear
+
+omnituts% rails generate model Admin
+/Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:222:in `default_controller_and_action': controller name should not start with a slash (ArgumentError)
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:116:in `normalize_options!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:64:in `initialize'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1451:in `new'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1451:in `add_route'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1430:in `decomposed_match'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1411:in `block in match'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1402:in `each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1402:in `match'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:332:in `root'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/mapper.rb:1472:in `root'
+	from /Users/Robosaad/Desktop/files/omnituts/omnituts/config/routes.rb:3:in `block in <top (required)>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/route_set.rb:335:in `instance_exec'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/route_set.rb:335:in `eval_block'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/routing/route_set.rb:313:in `draw'
+	from /Users/Robosaad/Desktop/files/omnituts/omnituts/config/routes.rb:1:in `<top (required)>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:223:in `load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:223:in `block in load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:214:in `load_dependency'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:223:in `load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:40:in `each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:40:in `load_paths'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:16:in `reload!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:26:in `block in updater'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/file_update_checker.rb:75:in `call'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/file_update_checker.rb:75:in `execute'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:27:in `updater'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/routes_reloader.rb:6:in `execute_if_updated'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application/finisher.rb:69:in `block in <module:Finisher>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:30:in `instance_exec'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:30:in `run'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:55:in `block in run_initializers'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:150:in `block in tsort_each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:183:in `block (2 levels) in each_strongly_connected_component'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:219:in `each_strongly_connected_component_from'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:182:in `block in each_strongly_connected_component'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:180:in `each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:180:in `each_strongly_connected_component'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/tsort.rb:148:in `tsort_each'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/initializable.rb:54:in `run_initializers'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application.rb:215:in `initialize!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/railtie/configurable.rb:30:in `method_missing'
+	from /Users/Robosaad/Desktop/files/omnituts/omnituts/config/environment.rb:5:in `<top (required)>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application.rb:189:in `require'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/application.rb:189:in `require_environment!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands.rb:44:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+omnituts% clear
+
+omnituts% rails generate model Admin
+      invoke  active_record
+      create    db/migrate/20140421122645_create_admins.rb
+      create    app/models/admin.rb
+      invoke    test_unit
+      create      test/models/admin_test.rb
+      create      test/fixtures/admins.yml
+omnituts% rails generate model Course
+      invoke  active_record
+      create    db/migrate/20140421122705_create_courses.rb
+      create    app/models/course.rb
+      invoke    test_unit
+      create      test/models/course_test.rb
+      create      test/fixtures/courses.yml
+omnituts% rails generate model Tutorial
+      invoke  active_record
+      create    db/migrate/20140421122715_create_tutorials.rb
+      create    app/models/tutorial.rb
+      invoke    test_unit
+      create      test/models/tutorial_test.rb
+      create      test/fixtures/tutorials.yml
+omnituts% rails generate model User
+      invoke  active_record
+      create    db/migrate/20140421122736_create_users.rb
+      create    app/models/user.rb
+      invoke    test_unit
+      create      test/models/user_test.rb
+      create      test/fixtures/users.yml
+omnituts% rake db:migrate
+== 20140421122645 CreateAdmins: migrating =====================================
+-- create_table(:admins)
+   -> 0.0281s
+-- add_index(:admins, :username)
+   -> 0.0463s
+-- add_index(:admins, :email)
+   -> 0.0209s
+== 20140421122645 CreateAdmins: migrated (0.0956s) ============================
+
+== 20140421122705 CreateCourses: migrating ====================================
+-- create_table(:courses)
+   -> 0.0275s
+== 20140421122705 CreateCourses: migrated (0.0277s) ===========================
+
+== 20140421122715 CreateTutorials: migrating ==================================
+-- create_table(:tutorials)
+   -> 0.0455s
+== 20140421122715 CreateTutorials: migrated (0.0457s) =========================
+
+== 20140421122736 CreateUsers: migrating ======================================
+-- create_table(:users)
+   -> 0.0624s
+== 20140421122736 CreateUsers: migrated (0.0626s) =============================
+
+omnituts% rake db:migrate:status
+
+database: omnituts_development
+
+ Status   Migration ID    Migration Name
+--------------------------------------------------
+   up     20140421122645  Create admins
+   up     20140421122705  Create courses
+   up     20140421122715  Create tutorials
+   up     20140421122736  Create users
+
+omnituts% rake db:migrate VERSION=20140421122645
+== 20140421122736 CreateUsers: reverting ======================================
+-- drop_table(:users)
+   -> 0.0208s
+== 20140421122736 CreateUsers: reverted (0.0237s) =============================
+
+== 20140421122715 CreateTutorials: reverting ==================================
+-- drop_table(:tutorials)
+   -> 0.0026s
+== 20140421122715 CreateTutorials: reverted (0.0028s) =========================
+
+== 20140421122705 CreateCourses: reverting ====================================
+-- drop_table(:courses)
+   -> 0.0022s
+== 20140421122705 CreateCourses: reverted (0.0025s) ===========================
+
+omnituts% rake db:migrate VERSION=20140421122705
+== 20140421122705 CreateCourses: migrating ====================================
+-- create_table(:courses)
+   -> 0.0144s
+-- add_index("courses", "course_name")
+   -> 0.0166s
+-- add_index("courses", "course_description")
+   -> 0.0145s
+== 20140421122705 CreateCourses: migrated (0.0458s) ===========================
+
+omnituts% rake db:migrate VERSION=0
+== 20140421122705 CreateCourses: reverting ====================================
+-- drop_table(:courses)
+   -> 0.0029s
+== 20140421122705 CreateCourses: reverted (0.0031s) ===========================
+
+== 20140421122645 CreateAdmins: reverting =====================================
+-- drop_table(:admins)
+   -> 0.0029s
+== 20140421122645 CreateAdmins: reverted (0.0030s) ============================
+
+omnituts% rake db:migrate VERSION=20140421122705
+== 20140421122645 CreateAdmins: migrating =====================================
+-- create_table(:admins)
+   -> 0.0146s
+-- add_index("admins", "username")
+   -> 0.0147s
+-- add_index("admins", "email")
+   -> 0.0148s
+== 20140421122645 CreateAdmins: migrated (0.0445s) ============================
+
+== 20140421122705 CreateCourses: migrating ====================================
+-- create_table(:courses)
+   -> 0.0123s
+-- add_index("courses", "course_name")
+   -> 0.0200s
+-- add_index("courses", "course_description")
+   -> 0.0168s
+== 20140421122705 CreateCourses: migrated (0.0493s) ===========================
+
+omnituts% rake db:migrate VERSION=0
+== 20140421122705 CreateCourses: reverting ====================================
+-- drop_table(:courses)
+   -> 0.0330s
+== 20140421122705 CreateCourses: reverted (0.0331s) ===========================
+
+== 20140421122645 CreateAdmins: reverting =====================================
+-- drop_table(:admins)
+   -> 0.0258s
+== 20140421122645 CreateAdmins: reverted (0.0260s) ============================
+
+omnituts% rake db:migrate
+== 20140421122645 CreateAdmins: migrating =====================================
+-- create_table(:admins)
+   -> 0.0321s
+-- add_index("admins", "username")
+   -> 0.0168s
+-- add_index("admins", "email")
+   -> 0.0164s
+== 20140421122645 CreateAdmins: migrated (0.0655s) ============================
+
+== 20140421122705 CreateCourses: migrating ====================================
+-- create_table(:courses)
+   -> 0.0194s
+-- add_index("courses", "course_name")
+   -> 0.0149s
+-- add_index("courses", "course_description")
+   -> 0.0171s
+== 20140421122705 CreateCourses: migrated (0.0517s) ===========================
+
+== 20140421122715 CreateTutorials: migrating ==================================
+-- create_table(:tutorials)
+rake aborted!
+StandardError: An error has occurred, all later migrations canceled:
+
+Mysql2::Error: BLOB/TEXT column 'tut_content' can't have a default value: CREATE TABLE `tutorials` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tut_title` varchar(255) DEFAULT 'Tutorial title' NOT NULL, `tut_content` text DEFAULT 'Lots to learn about!' NOT NULL, `course` varchar(255) NOT NULL, `num_of_admins` varchar(255) DEFAULT 1 NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB/Users/Robosaad/Desktop/files/omnituts/omnituts/db/migrate/20140421122715_create_tutorials.rb:4:in `up'
+Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
+omnituts% rake db:migrate:status
+
+database: omnituts_development
+
+ Status   Migration ID    Migration Name
+--------------------------------------------------
+   up     20140421122645  Create admins
+   up     20140421122705  Create courses
+  down    20140421122715  Create tutorials
+  down    20140421122736  Create users
+
+omnituts% rake db:migrate VERSION=20140421122705
+omnituts% rake db:migrate
+== 20140421122715 CreateTutorials: migrating ==================================
+-- create_table(:tutorials)
+   -> 0.0310s
+-- add_index("tutorials", "tut_title")
+   -> 0.0208s
+== 20140421122715 CreateTutorials: migrated (0.0521s) =========================
+
+== 20140421122736 CreateUsers: migrating ======================================
+-- create_table(:users)
+   -> 0.0293s
+== 20140421122736 CreateUsers: migrated (0.0294s) =============================
+
+omnituts% rake db:migrate:status
+
+database: omnituts_development
+
+ Status   Migration ID    Migration Name
+--------------------------------------------------
+   up     20140421122645  Create admins
+   up     20140421122705  Create courses
+   up     20140421122715  Create tutorials
+   up     20140421122736  Create users
+
+omnituts% clear
+
+omnituts% rails generate migration CreateAdminsTutorialsJoin
+      invoke  active_record
+      create    db/migrate/20140421164245_create_admins_tutorials_join.rb
+omnituts% rake db:migrate
+== 20140421164245 CreateAdminsTutorialsJoin: migrating ========================
+-- create_table(:admins_tutorials, {:id=>false})
+   -> 0.0551s
+-- add_index(:admins_tutorials, ["admin_id", "tutorial_id"])
+   -> 0.0255s
+== 20140421164245 CreateAdminsTutorialsJoin: migrated (0.0809s) ===============
+
+omnituts% clear
+
+
+
+
+
+
+
+
+
+
+
+
+omnituts% rails generate model CourseEnrollment
+      invoke  active_record
+      create    db/migrate/20140421204938_create_course_enrollments.rb
+      create    app/models/course_enrollment.rb
+      invoke    test_unit
+      create      test/models/course_enrollment_test.rb
+      create      test/fixtures/course_enrollments.yml
+omnituts% rake db:migrate
+== 20140421204938 CreateCourseEnrollments: migrating ==========================
+-- create_table(:course_enrollments)
+   -> 0.0672s
+-- add_index("course_enrollments", ["user_id", "course_id"])
+   -> 0.0228s
+== 20140421204938 CreateCourseEnrollments: migrated (0.0903s) =================
+
+omnituts% clear
+
+
+
+
+
+
+
+
+omnituts% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> Admin.all
+  Admin Load (0.4ms)  SELECT `admins`.* FROM `admins`
+=> #<ActiveRecord::Relation []>
+irb(main):002:0> me = Admin.create(:username => "satza", :password => "saad_Zahoor1234)
+irb(main):003:1" exit
+irb(main):004:1" ^C
+irb(main):004:0> me = Admin.create(:username => "satza", :password => "saad_Zahoor1234")
+   (0.2ms)  BEGIN
+  SQL (34.1ms)  INSERT INTO `admins` (`created_at`, `password`, `updated_at`, `username`) VALUES ('2014-04-21 21:08:46', 'saad_Zahoor1234', '2014-04-21 21:08:46', 'satza')
+   (1.6ms)  COMMIT
+=> #<Admin id: 1, username: "satza", password: "saad_Zahoor1234", first_name: "Unspecified.", last_name: "Unspecified.", email: "Unspecified.", num_of_tuts: 0, created_at: "2014-04-21 21:08:46", updated_at: "2014-04-21 21:08:46">
+irb(main):005:0> Admin.all
+  Admin Load (0.6ms)  SELECT `admins`.* FROM `admins`
+=> #<ActiveRecord::Relation [#<Admin id: 1, username: "satza", password: "saad_Zahoor1234", first_name: "Unspecified.", last_name: "Unspecified.", email: "Unspecified.", num_of_tuts: 0, created_at: "2014-04-21 21:08:46", updated_at: "2014-04-21 21:08:46">]>
+irb(main):006:0> me = Admin.find(1)
+  Admin Load (28.9ms)  SELECT `admins`.* FROM `admins` WHERE `admins`.`id` = 1 LIMIT 1
+=> #<Admin id: 1, username: "satza", password: "saad_Zahoor1234", first_name: "Unspecified.", last_name: "Unspecified.", email: "Unspecified.", num_of_tuts: 0, created_at: "2014-04-21 21:08:46", updated_at: "2014-04-21 21:08:46">
+irb(main):007:0> me.tutorials
+  Tutorial Load (27.0ms)  SELECT `tutorials`.* FROM `tutorials` INNER JOIN `admins_tutorials` ON `tutorials`.`id` = `admins_tutorials`.`tutorial_id` WHERE `admins_tutorials`.`admin_id` = 1
+=> #<ActiveRecord::Associations::CollectionProxy []>
+irb(main):008:0> exit
+omnituts% cd ..
+omnituts% cd ..
+files% cd ruby/lynda
+-bash: cd: ruby/lynda: No such file or directory
+files% cd progdocs/ruby/lynda/learning_rails
+learning_rails% clear
+
+learning_rails% rails server
+=> Booting WEBrick
+=> Rails 4.0.4 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2014-04-22 14:33:50] INFO  WEBrick 1.3.1
+[2014-04-22 14:33:50] INFO  ruby 2.1.0 (2013-09-22) [x86_64-darwin13.0.0]
+[2014-04-22 14:33:50] INFO  WEBrick::HTTPServer#start: pid=68552 port=3000
+
+
+Started GET "/pages" for 127.0.0.1 at 2014-04-22 14:33:53 +0300
+  ActiveRecord::SchemaMigration Load (7.7ms)  SELECT `schema_migrations`.* FROM `schema_migrations`
+Processing by PagesController#index as HTML
+  Page Load (0.7ms)  SELECT `pages`.* FROM `pages` ORDER BY pages.position ASC
+  Subject Load (6.8ms)  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1
+   (1.1ms)  SELECT COUNT(*) FROM `sections` WHERE `sections`.`page_id` = 2
+  Subject Load (0.3ms)  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 2 LIMIT 1
+   (0.3ms)  SELECT COUNT(*) FROM `sections` WHERE `sections`.`page_id` = 3
+   (0.4ms)  SELECT COUNT(*) FROM `sections` WHERE `sections`.`page_id` = 4
+  Rendered pages/index.html.erb within layouts/admin (139.7ms)
+Completed 200 OK in 237ms (Views: 156.6ms | ActiveRecord: 68.8ms)
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 14:33:54 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 14:33:54 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 14:33:54 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 14:33:54 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 14:33:54 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 14:33:54 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 14:33:54 +0300
+
+
+Started GET "/sections" for 127.0.0.1 at 2014-04-22 14:33:57 +0300
+Processing by SectionsController#index as HTML
+  Section Load (6.1ms)  SELECT `sections`.* FROM `sections` ORDER BY sections.position ASC
+  Rendered sections/index.html.erb within layouts/admin (24.6ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (undefined method `page' for #<Section:0x007f8bb9616038>):
+    14:     <% @sections.each do |section| %>
+    15:       <tr>
+    16:         <td><%= section.position %></td>
+    17:         <td><%= section.page.name id section.page %></td>
+    18:         <td><%= section.name %></td>
+    19:         <td class="center"><%= section.content_type %></td>
+    20:         <td class="center"><%= status_tag(section.visible) %></td>
+  app/views/sections/index.html.erb:17:in `block in _app_views_sections_index_html_erb__2452026381365403254_70119044050300'
+  app/views/sections/index.html.erb:14:in `_app_views_sections_index_html_erb__2452026381365403254_70119044050300'
+
+
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.4ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.8ms)
+
+
+Started GET "/sections" for 127.0.0.1 at 2014-04-22 14:34:20 +0300
+Processing by SectionsController#index as HTML
+  Section Load (0.4ms)  SELECT `sections`.* FROM `sections` ORDER BY sections.position ASC
+  Rendered sections/index.html.erb within layouts/admin (3.6ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `page' for #<Section:0x007f8bbbd46388>):
+    14:     <% @sections.each do |section| %>
+    15:       <tr>
+    16:         <td><%= section.position %></td>
+    17:         <td><%= section.page.name if section.page %></td>
+    18:         <td><%= section.name %></td>
+    19:         <td class="center"><%= section.content_type %></td>
+    20:         <td class="center"><%= status_tag(section.visible) %></td>
+  app/views/sections/index.html.erb:17:in `block in _app_views_sections_index_html_erb__2452026381365403254_70119061455080'
+  app/views/sections/index.html.erb:14:in `_app_views_sections_index_html_erb__2452026381365403254_70119061455080'
+
+
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.4ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.2ms)
+
+
+Started GET "/sections" for 127.0.0.1 at 2014-04-22 14:35:49 +0300
+Processing by SectionsController#index as HTML
+  Section Load (0.3ms)  SELECT `sections`.* FROM `sections` ORDER BY sections.position ASC
+  Rendered sections/index.html.erb within layouts/admin (2.2ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `page' for #<Section:0x007f8bbba5d6f8>):
+    14:     <% @sections.each do |section| %>
+    15:       <tr>
+    16:         <td><%= section.position %></td>
+    17:         <td><%= section.page.name if section.page %></td>
+    18:         <td><%= section.name %></td>
+    19:         <td class="center"><%= section.content_type %></td>
+    20:         <td class="center"><%= status_tag(section.visible) %></td>
+  app/views/sections/index.html.erb:17:in `block in _app_views_sections_index_html_erb__2452026381365403254_70119061455080'
+  app/views/sections/index.html.erb:14:in `_app_views_sections_index_html_erb__2452026381365403254_70119061455080'
+
+
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.4ms)
+
+
+Started GET "/sections" for 127.0.0.1 at 2014-04-22 14:35:52 +0300
+Processing by SectionsController#index as HTML
+  Section Load (0.4ms)  SELECT `sections`.* FROM `sections` ORDER BY sections.position ASC
+  Rendered sections/index.html.erb within layouts/admin (4.1ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 14:35:52 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 14:35:52 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 14:35:52 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 14:35:52 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 14:35:52 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 14:35:52 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 14:35:52 +0300
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2014-04-22 14:35:54 +0300
+Processing by SectionsController#new as HTML
+   (0.3ms)  SELECT COUNT(*) FROM `sections`
+  Page Load (0.4ms)  SELECT `pages`.* FROM `pages` ORDER BY position ASC
+  Rendered sections/_form.html.erb (11.0ms)
+  Rendered sections/new.html.erb within layouts/admin (16.4ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (bad value for range):
+    1: <table summary="Section form fields">
+    2:   <tr>
+    3:     <th><%= f.label(:page_id, "Page") %></th>
+    4:     <td><%= f.select(:page_id, 1..@pages.map {|p| [p.name, p.id]}) %></td>
+    5:   </tr>
+    6:   <tr>
+    7:     <th><%= f.label(:name) %></th>
+  app/views/sections/_form.html.erb:4:in `_app_views_sections__form_html_erb__3795910362867183234_70119063878000'
+  app/views/sections/new.html.erb:5:in `block in _app_views_sections_new_html_erb__3626345966008142649_70119064120380'
+  app/views/sections/new.html.erb:4:in `_app_views_sections_new_html_erb__3626345966008142649_70119064120380'
+
+
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.5ms)
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2014-04-22 14:37:39 +0300
+Processing by SectionsController#new as HTML
+   (0.4ms)  SELECT COUNT(*) FROM `sections`
+  Page Load (0.4ms)  SELECT `pages`.* FROM `pages` ORDER BY position ASC
+  Rendered sections/_form.html.erb (2.8ms)
+  Rendered sections/new.html.erb within layouts/admin (4.2ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (bad value for range):
+    1: <table summary="Section form fields">
+    2:   <tr>
+    3:     <th><%= f.label(:page_id, "Page") %></th>
+    4:     <td><%= f.select(:page_id, 1..@pages.collect {|p| [p.name, p.id]}) %></td>
+    5:   </tr>
+    6:   <tr>
+    7:     <th><%= f.label(:name) %></th>
+  app/views/sections/_form.html.erb:4:in `_app_views_sections__form_html_erb__3795910362867183234_70119061882840'
+  app/views/sections/new.html.erb:5:in `block in _app_views_sections_new_html_erb__3626345966008142649_70119064120380'
+  app/views/sections/new.html.erb:4:in `_app_views_sections_new_html_erb__3626345966008142649_70119064120380'
+
+
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.6ms)
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2014-04-22 14:38:57 +0300
+Processing by SectionsController#new as HTML
+   (0.3ms)  SELECT COUNT(*) FROM `sections`
+  Rendered sections/_form.html.erb (25.9ms)
+  Rendered sections/new.html.erb within layouts/admin (28.6ms)
+Completed 200 OK in 51ms (Views: 33.1ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 14:38:57 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 14:38:57 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 14:38:57 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 14:38:57 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 14:38:57 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 14:38:57 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 14:38:57 +0300
+
+
+Started GET "/sections" for 127.0.0.1 at 2014-04-22 14:39:00 +0300
+Processing by SectionsController#index as HTML
+  Section Load (0.6ms)  SELECT `sections`.* FROM `sections` ORDER BY sections.position ASC
+  Rendered sections/index.html.erb within layouts/admin (13.6ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:01 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:01 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:01 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:01 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:01 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:01 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:01 +0300
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2014-04-22 14:39:02 +0300
+Processing by SectionsController#new as HTML
+   (0.3ms)  SELECT COUNT(*) FROM `sections`
+  Rendered sections/_form.html.erb (3.5ms)
+  Rendered sections/new.html.erb within layouts/admin (5.8ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:02 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:02 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:02 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:02 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:02 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:02 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:02 +0300
+
+
+Started GET "/sections" for 127.0.0.1 at 2014-04-22 14:39:04 +0300
+Processing by SectionsController#index as HTML
+  Section Load (0.4ms)  SELECT `sections`.* FROM `sections` ORDER BY sections.position ASC
+  Rendered sections/index.html.erb within layouts/admin (4.0ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:04 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:04 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:04 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:04 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:04 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:04 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:04 +0300
+
+
+Started GET "/sections/edit/2" for 127.0.0.1 at 2014-04-22 14:39:05 +0300
+Processing by SectionsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Section Load (0.4ms)  SELECT `sections`.* FROM `sections` WHERE `sections`.`id` = 2 LIMIT 1
+   (0.2ms)  SELECT COUNT(*) FROM `sections`
+  Rendered sections/_form.html.erb (3.2ms)
+  Rendered sections/edit.html.erb within layouts/admin (6.5ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:05 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:05 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:05 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:05 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:05 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:05 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:05 +0300
+
+
+Started GET "/sections" for 127.0.0.1 at 2014-04-22 14:39:08 +0300
+Processing by SectionsController#index as HTML
+  Section Load (0.5ms)  SELECT `sections`.* FROM `sections` ORDER BY sections.position ASC
+  Rendered sections/index.html.erb within layouts/admin (4.1ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:08 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:08 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:08 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:08 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:08 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:08 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 14:39:08 +0300
+
+
+Started GET "/subjects" for 127.0.0.1 at 2014-04-22 14:44:14 +0300
+Processing by SubjectsController#index as HTML
+   (0.3ms)  SELECT COUNT(*) FROM `subjects`
+  Subject Load (0.4ms)  SELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC
+   (0.3ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 1
+   (0.3ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 2
+   (0.3ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 4
+  Rendered subjects/index.html.erb within layouts/admin (52.2ms)
+Completed 200 OK in 61ms (Views: 34.5ms | ActiveRecord: 23.0ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:14 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:14 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:14 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:14 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:14 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:14 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:14 +0300
+
+
+Started GET "/assets/plus_sign.png" for 127.0.0.1 at 2014-04-22 14:44:14 +0300
+
+
+Started GET "/subjects/new" for 127.0.0.1 at 2014-04-22 14:44:17 +0300
+Processing by SubjectsController#new as HTML
+   (0.3ms)  SELECT COUNT(*) FROM `subjects`
+  Rendered subjects/_form.html.erb (20.5ms)
+  Rendered subjects/new.html.erb within layouts/admin (24.1ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:17 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:17 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:17 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:17 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:17 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:17 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:17 +0300
+
+
+Started GET "/subjects/new" for 127.0.0.1 at 2014-04-22 14:44:57 +0300
+Processing by SubjectsController#new as HTML
+   (0.3ms)  SELECT COUNT(*) FROM `subjects`
+  Rendered subjects/_form.html.erb (8.0ms)
+  Rendered subjects/new.html.erb within layouts/admin (10.2ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:57 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:57 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:57 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:57 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:57 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:57 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 14:44:57 +0300
+
+
+Started GET "/subjects" for 127.0.0.1 at 2014-04-22 17:18:18 +0300
+Processing by SubjectsController#index as HTML
+   (11.6ms)  SELECT COUNT(*) FROM `subjects`
+  Subject Load (1.0ms)  SELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC
+   (6.0ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 1
+   (0.4ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 2
+   (0.4ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 4
+  Rendered subjects/index.html.erb within layouts/admin (180.4ms)
+Completed 200 OK in 199ms (Views: 60.2ms | ActiveRecord: 134.0ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:19 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:19 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:19 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:19 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:19 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:19 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:19 +0300
+
+
+Started GET "/assets/plus_sign.png" for 127.0.0.1 at 2014-04-22 17:18:19 +0300
+
+
+Started GET "/subjects/edit/4" for 127.0.0.1 at 2014-04-22 17:18:23 +0300
+Processing by SubjectsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  Subject Load (0.4ms)  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 4 LIMIT 1
+   (0.3ms)  SELECT COUNT(*) FROM `subjects`
+  Rendered subjects/_form.html.erb (8.7ms)
+  Rendered subjects/edit.html.erb within layouts/admin (13.2ms)
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:23 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:23 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:23 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:23 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:23 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:23 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:23 +0300
+
+
+Started POST "/subjects/update/4" for 127.0.0.1 at 2014-04-22 17:18:27 +0300
+Processing by SubjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XRr8Rq2i/t0hjnJZ6QJBKWz/lTgjWW+MZVn4wlh38T4=", "subject"=>{"name"=>"", "position"=>"3", "visible"=>"0", "created_at(2i)"=>"4", "created_at(3i)"=>"10", "created_at(1i)"=>"2014", "created_at(4i)"=>"16", "created_at(5i)"=>"56"}, "commit"=>"Update Subject", "id"=>"4"}
+  Subject Load (0.4ms)  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 4 LIMIT 1
+Unpermitted parameters: created_at(2i), created_at(3i), created_at(1i), created_at(4i), created_at(5i)
+   (0.3ms)  BEGIN
+   (0.2ms)  ROLLBACK
+   (0.3ms)  SELECT COUNT(*) FROM `subjects`
+  Rendered subjects/_form.html.erb (9.1ms)
+  Rendered subjects/edit.html.erb within layouts/admin (11.7ms)
+Completed 200 OK in 25ms (Views: 16.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:27 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:27 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:27 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:27 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:27 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:27 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 17:18:27 +0300
+^C[2014-04-22 17:27:27] INFO  going to shutdown ...
+[2014-04-22 17:27:27] INFO  WEBrick::HTTPServer#start done.
+Exiting
+learning_rails% rails server
+=> Booting WEBrick
+=> Rails 4.0.4 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2014-04-22 17:37:31] INFO  WEBrick 1.3.1
+[2014-04-22 17:37:31] INFO  ruby 2.1.0 (2013-09-22) [x86_64-darwin13.0.0]
+[2014-04-22 17:37:31] INFO  WEBrick::HTTPServer#start: pid=69313 port=3000
+
+
+Started GET "/subjects/update/4" for 127.0.0.1 at 2014-04-22 17:39:21 +0300
+  ActiveRecord::SchemaMigration Load (0.6ms)  SELECT `schema_migrations`.* FROM `schema_migrations`
+Processing by SubjectsController#update as HTML
+  Parameters: {"id"=>"4"}
+  Subject Load (0.3ms)  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 4 LIMIT 1
+Completed 400 Bad Request in 34ms
+
+ActionController::ParameterMissing (param is missing or the value is empty: subject):
+  app/controllers/subjects_controller.rb:69:in `subject_params'
+  app/controllers/subjects_controller.rb:42:in `update'
+
+
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (22.4ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (42.7ms)
+
+
+Started GET "/subjects" for 127.0.0.1 at 2014-04-22 17:39:35 +0300
+Processing by SubjectsController#index as HTML
+   (0.3ms)  SELECT COUNT(*) FROM `subjects`
+  Subject Load (0.3ms)  SELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC
+   (0.5ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 1
+   (0.5ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 2
+   (0.4ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 4
+  Rendered subjects/index.html.erb within layouts/admin (70.7ms)
+Completed 200 OK in 126ms (Views: 102.8ms | ActiveRecord: 22.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:35 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:35 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:35 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:35 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:35 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:35 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:35 +0300
+
+
+Started GET "/assets/plus_sign.png" for 127.0.0.1 at 2014-04-22 17:39:35 +0300
+
+
+Started GET "/subjects/new" for 127.0.0.1 at 2014-04-22 17:39:36 +0300
+Processing by SubjectsController#new as HTML
+   (0.3ms)  SELECT COUNT(*) FROM `subjects`
+  Rendered application/_error_messages.html.erb (3.7ms)
+  Rendered subjects/_form.html.erb (43.4ms)
+  Rendered subjects/new.html.erb within layouts/admin (50.3ms)
+Completed 200 OK in 57ms (Views: 55.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:36 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:36 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:36 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:36 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:36 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:36 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:36 +0300
+
+
+Started GET "/subjects" for 127.0.0.1 at 2014-04-22 17:39:39 +0300
+Processing by SubjectsController#index as HTML
+   (0.3ms)  SELECT COUNT(*) FROM `subjects`
+  Subject Load (0.4ms)  SELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC
+   (0.3ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 1
+   (0.4ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 2
+   (0.3ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 4
+  Rendered subjects/index.html.erb within layouts/admin (12.0ms)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:39 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:39 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:39 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:39 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:39 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:39 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:39 +0300
+
+
+Started GET "/assets/plus_sign.png" for 127.0.0.1 at 2014-04-22 17:39:39 +0300
+
+
+Started GET "/subjects/edit/4" for 127.0.0.1 at 2014-04-22 17:39:42 +0300
+Processing by SubjectsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  Subject Load (0.4ms)  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 4 LIMIT 1
+   (0.3ms)  SELECT COUNT(*) FROM `subjects`
+  Rendered application/_error_messages.html.erb (0.1ms)
+  Rendered subjects/_form.html.erb (7.3ms)
+  Rendered subjects/edit.html.erb within layouts/admin (10.2ms)
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:42 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:42 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:42 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:42 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:42 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:42 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:42 +0300
+
+
+Started POST "/subjects/update/4" for 127.0.0.1 at 2014-04-22 17:39:46 +0300
+Processing by SubjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XRr8Rq2i/t0hjnJZ6QJBKWz/lTgjWW+MZVn4wlh38T4=", "subject"=>{"name"=>"", "position"=>"3", "visible"=>"0", "created_at(2i)"=>"4", "created_at(3i)"=>"10", "created_at(1i)"=>"2014", "created_at(4i)"=>"16", "created_at(5i)"=>"56"}, "commit"=>"Update Subject", "id"=>"4"}
+  Subject Load (0.3ms)  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 4 LIMIT 1
+Unpermitted parameters: created_at(2i), created_at(3i), created_at(1i), created_at(4i), created_at(5i)
+   (0.1ms)  BEGIN
+   (0.2ms)  ROLLBACK
+   (0.3ms)  SELECT COUNT(*) FROM `subjects`
+  Rendered application/_error_messages.html.erb (0.6ms)
+  Rendered subjects/_form.html.erb (7.6ms)
+  Rendered subjects/edit.html.erb within layouts/admin (9.9ms)
+Completed 200 OK in 22ms (Views: 14.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:46 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:46 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:46 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:46 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:46 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:46 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 17:39:46 +0300
+
+
+Started POST "/subjects/update/4" for 127.0.0.1 at 2014-04-22 17:41:19 +0300
+Processing by SubjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XRr8Rq2i/t0hjnJZ6QJBKWz/lTgjWW+MZVn4wlh38T4=", "subject"=>{"name"=>"", "position"=>"3", "visible"=>"0", "created_at(2i)"=>"4", "created_at(3i)"=>"10", "created_at(1i)"=>"2014", "created_at(4i)"=>"16", "created_at(5i)"=>"56"}, "commit"=>"Update Subject", "id"=>"4"}
+  Subject Load (0.4ms)  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 4 LIMIT 1
+Unpermitted parameters: created_at(2i), created_at(3i), created_at(1i), created_at(4i), created_at(5i)
+   (0.2ms)  BEGIN
+   (0.2ms)  ROLLBACK
+   (0.3ms)  SELECT COUNT(*) FROM `subjects`
+  Rendered application/_error_messages.html.erb (0.5ms)
+  Rendered subjects/_form.html.erb (7.0ms)
+  Rendered subjects/edit.html.erb within layouts/admin (8.7ms)
+Completed 200 OK in 39ms (Views: 33.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 17:41:19 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 17:41:19 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 17:41:19 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 17:41:19 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 17:41:19 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 17:41:19 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 17:41:19 +0300
+
+
+Started POST "/subjects/update/4" for 127.0.0.1 at 2014-04-22 17:41:45 +0300
+Processing by SubjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XRr8Rq2i/t0hjnJZ6QJBKWz/lTgjWW+MZVn4wlh38T4=", "subject"=>{"name"=>"", "position"=>"3", "visible"=>"0", "created_at(2i)"=>"4", "created_at(3i)"=>"10", "created_at(1i)"=>"2014", "created_at(4i)"=>"16", "created_at(5i)"=>"56"}, "commit"=>"Update Subject", "id"=>"4"}
+  Subject Load (0.9ms)  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 4 LIMIT 1
+Unpermitted parameters: created_at(2i), created_at(3i), created_at(1i), created_at(4i), created_at(5i)
+   (0.2ms)  BEGIN
+   (0.2ms)  ROLLBACK
+   (0.3ms)  SELECT COUNT(*) FROM `subjects`
+  Rendered application/_error_messages.html.erb (0.6ms)
+  Rendered subjects/_form.html.erb (8.2ms)
+  Rendered subjects/edit.html.erb within layouts/admin (10.1ms)
+Completed 200 OK in 45ms (Views: 38.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-22 17:41:45 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-22 17:41:45 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-22 17:41:45 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-22 17:41:45 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-22 17:41:46 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-22 17:41:46 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-22 17:41:46 +0300
+^C[2014-04-22 20:46:32] INFO  going to shutdown ...
+[2014-04-22 20:46:32] INFO  WEBrick::HTTPServer#start done.
+Exiting
+learning_rails% cd ../
+lynda% cd ../../../
+files% cd omnituts/omnituts
+omnituts% git add .
+fatal: Not a git repository (or any of the parent directories): .git
+omnituts% ls
+Gemfile		Rakefile	config		lib		test
+Gemfile.lock	app		config.ru	log		tmp
+README.rdoc	bin		db		public		vendor
+omnituts% git init
+Initialized empty Git repository in /Users/Robosaad/Desktop/files/omnituts/omnituts/.git/
+omnituts% git add .
+omnituts% git commit -m "Uploading new and improved version of omnituts (RoR release) to github."
+[master (root-commit) e270d50] Uploading new and improved version of omnituts (RoR release) to github.
+ 76 files changed, 1125 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 Gemfile
+ create mode 100644 Gemfile.lock
+ create mode 100644 README.rdoc
+ create mode 100644 Rakefile
+ create mode 100644 app/assets/images/.keep
+ create mode 100644 app/assets/javascripts/application.js
+ create mode 100644 app/assets/stylesheets/application.css
+ create mode 100644 app/controllers/application_controller.rb
+ create mode 100644 app/controllers/concerns/.keep
+ create mode 100644 app/helpers/application_helper.rb
+ create mode 100644 app/mailers/.keep
+ create mode 100644 app/models/.keep
+ create mode 100644 app/models/admin.rb
+ create mode 100644 app/models/concerns/.keep
+ create mode 100644 app/models/course.rb
+ create mode 100644 app/models/course_enrollment.rb
+ create mode 100644 app/models/tutorial.rb
+ create mode 100644 app/models/user.rb
+ create mode 100644 app/views/layouts/application.html.erb
+ create mode 100755 bin/bundle
+ create mode 100755 bin/rails
+ create mode 100755 bin/rake
+ create mode 100644 config.ru
+ create mode 100644 config/application.rb
+ create mode 100644 config/boot.rb
+ create mode 100644 config/database.yml
+ create mode 100644 config/environment.rb
+ create mode 100644 config/environments/development.rb
+ create mode 100644 config/environments/production.rb
+ create mode 100644 config/environments/test.rb
+ create mode 100644 config/initializers/backtrace_silencers.rb
+ create mode 100644 config/initializers/filter_parameter_logging.rb
+ create mode 100644 config/initializers/inflections.rb
+ create mode 100644 config/initializers/mime_types.rb
+ create mode 100644 config/initializers/secret_token.rb
+ create mode 100644 config/initializers/session_store.rb
+ create mode 100644 config/initializers/wrap_parameters.rb
+ create mode 100644 config/locales/en.yml
+ create mode 100644 config/routes.rb
+ create mode 100644 db/migrate/20140421122645_create_admins.rb
+ create mode 100644 db/migrate/20140421122705_create_courses.rb
+ create mode 100644 db/migrate/20140421122715_create_tutorials.rb
+ create mode 100644 db/migrate/20140421122736_create_users.rb
+ create mode 100644 db/migrate/20140421164245_create_admins_tutorials_join.rb
+ create mode 100644 db/migrate/20140421204938_create_course_enrollments.rb
+ create mode 100644 db/schema.rb
+ create mode 100644 db/seeds.rb
+ create mode 100644 lib/assets/.keep
+ create mode 100644 lib/tasks/.keep
+ create mode 100644 log/.keep
+ create mode 100644 public/404.html
+ create mode 100644 public/422.html
+ create mode 100644 public/500.html
+ create mode 100644 public/favicon.ico
+ create mode 100644 public/index.html
+ create mode 100644 public/robots.txt
+ create mode 100644 test/controllers/.keep
+ create mode 100644 test/fixtures/.keep
+ create mode 100644 test/fixtures/admins.yml
+ create mode 100644 test/fixtures/course_enrollments.yml
+ create mode 100644 test/fixtures/courses.yml
+ create mode 100644 test/fixtures/tutorials.yml
+ create mode 100644 test/fixtures/users.yml
+ create mode 100644 test/helpers/.keep
+ create mode 100644 test/integration/.keep
+ create mode 100644 test/mailers/.keep
+ create mode 100644 test/models/.keep
+ create mode 100644 test/models/admin_test.rb
+ create mode 100644 test/models/course_enrollment_test.rb
+ create mode 100644 test/models/course_test.rb
+ create mode 100644 test/models/tutorial_test.rb
+ create mode 100644 test/models/user_test.rb
+ create mode 100644 test/test_helper.rb
+ create mode 100644 vendor/assets/javascripts/.keep
+ create mode 100644 vendor/assets/stylesheets/.keep
+omnituts% git push origin final
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+omnituts% git remote add origin https://github.com/SaadZahoor/omnituts.git
+omnituts% git push origin final
+error: src refspec final does not match any.
+error: failed to push some refs to 'https://github.com/SaadZahoor/omnituts.git'
+omnituts% git commit -m "Uploading new and improved version of omnituts (RoR release) to github."
+# On branch master
+nothing to commit, working directory clean
+omnituts% git checkout -b feature_x
+Switched to a new branch 'feature_x'
+omnituts% git checkout master
+Switched to branch 'master'
+omnituts% git checkout -b final
+Switched to a new branch 'final'
+omnituts% git push origin final
+To https://github.com/SaadZahoor/omnituts.git
+ ! [rejected]        final -> final (fetch first)
+error: failed to push some refs to 'https://github.com/SaadZahoor/omnituts.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+omnituts% git checkout master
+Switched to branch 'master'
+omnituts% git checkout -b v2
+Switched to a new branch 'v2'
+omnituts% git push origin v2
+Counting objects: 82, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (71/71), done.
+Writing objects: 100% (82/82), 18.52 KiB | 0 bytes/s, done.
+Total 82 (delta 5), reused 0 (delta 0)
+To https://github.com/SaadZahoor/omnituts.git
+ * [new branch]      v2 -> v2
+omnituts% ls
+Gemfile		Rakefile	config		lib		test
+Gemfile.lock	app		config.ru	log		tmp
+README.rdoc	bin		db		public		vendor
+omnituts% git commit -m "Uploading new and improved version of omnituts (RoR release) to github."
+# On branch v2
+nothing to commit, working directory clean
+omnituts% git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+Did you mean this?
+	add
+omnituts% git add .
+omnituts% git commit -m "Uploading new and improved version of omnituts (RoR release) to github."
+# On branch v2
+nothing to commit, working directory clean
+omnituts% git push origin --delete final
+To https://github.com/SaadZahoor/omnituts.git
+ - [deleted]         final
+omnituts% git push origin --delete first_go
+To https://github.com/SaadZahoor/omnituts.git
+ - [deleted]         first_go
+omnituts% gitk
+omnituts% sudo gem install things-rb
+Password:
+Fetching: hpricot-0.8.6.gem (100%)
+Building native extensions.  This could take a while...
+Successfully installed hpricot-0.8.6
+Fetching: things-rb-0.4.0.gem (100%)
+Successfully installed things-rb-0.4.0
+Parsing documentation for hpricot-0.8.6
+Installing ri documentation for hpricot-0.8.6
+Parsing documentation for things-rb-0.4.0
+Installing ri documentation for things-rb-0.4.0
+Done installing documentation for hpricot, things-rb after 3 seconds
+2 gems installed
+omnituts% clear
+
+omnituts% rbenv rehash
+omnituts% cleaer
+-bash: cleaer: command not found
+omnituts% clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+omnituts% rake db:migrate:status
+
+database: omnituts_development
+
+ Status   Migration ID    Migration Name
+--------------------------------------------------
+   up     20140421122645  Create admins
+   up     20140421122705  Create courses
+   up     20140421122715  Create tutorials
+   up     20140421122736  Create users
+   up     20140421164245  Create admins tutorials join
+   up     20140421204938  Create course enrollments
+
+omnituts% mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 216
+Server version: 5.6.12 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE omnituts_development;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> DROP TABLE admins_tutorials;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> exit
+Bye
+omnituts% clear
+
+omnituts% rake db:migrate:status
+
+database: omnituts_development
+
+ Status   Migration ID    Migration Name
+--------------------------------------------------
+   up     20140421122645  Create admins
+   up     20140421122705  Create courses
+   up     20140421122715  Create tutorials
+   up     20140421122736  Create users
+   up     20140421164245  ********** NO FILE **********
+   up     20140421204938  Create course enrollments
+
+omnituts% rake db:migrate
+omnituts% rake db:migrate:redo VERSION=20140421122715
+== 20140421122715 CreateTutorials: reverting ==================================
+-- drop_table(:tutorials)
+   -> 0.0278s
+== 20140421122715 CreateTutorials: reverted (0.0279s) =========================
+
+== 20140421122715 CreateTutorials: migrating ==================================
+-- create_table(:tutorials)
+   -> 0.0535s
+-- add_index("tutorials", "course_id")
+   -> 0.0304s
+-- add_index("tutorials", "author_id")
+   -> 0.0205s
+-- add_index("tutorials", "tut_title")
+   -> 0.0296s
+== 20140421122715 CreateTutorials: migrated (0.1344s) =========================
+
+omnituts% rake db:migrate:status
+
+database: omnituts_development
+
+ Status   Migration ID    Migration Name
+--------------------------------------------------
+   up     20140421122645  Create admins
+   up     20140421122705  Create courses
+   up     20140421122715  Create tutorials
+   up     20140421122736  Create users
+   up     20140421164245  ********** NO FILE **********
+   up     20140421204938  Create course enrollments
+
+omnituts% rake db:migrate:down VERSION=20140421164245
+rake aborted!
+ActiveRecord::UnknownMigrationVersionError: No migration with version number 20140421164245
+
+Tasks: TOP => db:migrate:down
+(See full trace by running task with --trace)
+omnituts% rake db:migrate:status
+
+database: omnituts_development
+
+ Status   Migration ID    Migration Name
+--------------------------------------------------
+   up     20140421122645  Create admins
+   up     20140421122705  Create courses
+   up     20140421122715  Create tutorials
+   up     20140421122736  Create users
+   up     20140421164245  ********** NO FILE **********
+   up     20140421204938  Create course enrollments
+
+omnituts% clear
+
+omnituts% rails generate controller Tutorials
+      create  app/controllers/tutorials_controller.rb
+      invoke  erb
+      create    app/views/tutorials
+      invoke  test_unit
+      create    test/controllers/tutorials_controller_test.rb
+      invoke  helper
+      create    app/helpers/tutorials_helper.rb
+      invoke    test_unit
+      create      test/helpers/tutorials_helper_test.rb
+      invoke  assets
+      invoke    js
+      create      app/assets/javascripts/tutorials.js
+      invoke    scss
+      create      app/assets/stylesheets/tutorials.css.scss
+omnituts% rails server
+=> Booting WEBrick
+=> Rails 4.0.4 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2014-04-23 14:29:46] INFO  WEBrick 1.3.1
+[2014-04-23 14:29:46] INFO  ruby 2.1.0 (2013-09-22) [x86_64-darwin13.0.0]
+[2014-04-23 14:29:46] INFO  WEBrick::HTTPServer#start: pid=71866 port=3000
+^C[2014-04-23 14:32:32] INFO  going to shutdown ...
+[2014-04-23 14:32:32] INFO  WEBrick::HTTPServer#start done.
+Exiting
+omnituts% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> tut = Tutorial.new()
+=> #<Tutorial id: nil, course_id: nil, author_id: nil, tut_title: "Tutorial title", tut_content: "Lots to learn about!", created_at: nil, updated_at: nil>
+irb(main):002:0> tut.course_id = 3
+=> 3
+irb(main):003:0> tut.author_id = 1
+=> 1
+irb(main):004:0> tut.title = "MRSGREN"
+NoMethodError: undefined method `title=' for #<Tutorial:0x007ffa027021b0>
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activemodel-4.0.4/lib/active_model/attribute_methods.rb:439:in `method_missing'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activerecord-4.0.4/lib/active_record/attribute_methods.rb:167:in `method_missing'
+	from (irb):4
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:90:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:9:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+irb(main):005:0> tut.tut_title = "MRSGREN"
+=> "MRSGREN"
+irb(main):006:0> tut.tut_content = "MRSGREN is an acronym used to remember the seven main characteristics used to identify an organism as living or non living. An organism must display all seven characteristics in order to be said to be living."
+=> "MRSGREN is an acronym used to remember the seven main characteristics used to identify an organism as living or non living. An organism must display all seven characteristics in order to be said to be living."
+irb(main):007:0> tut.save
+   (0.4ms)  BEGIN
+  SQL (28.6ms)  INSERT INTO `tutorials` (`author_id`, `course_id`, `created_at`, `tut_content`, `tut_title`, `updated_at`) VALUES (1, 3, '2014-04-23 11:34:55', 'MRSGREN is an acronym used to remember the seven main characteristics used to identify an organism as living or non living. An organism must display all seven characteristics in order to be said to be living.', 'MRSGREN', '2014-04-23 11:34:55')
+   (12.4ms)  COMMIT
+=> true
+irb(main):008:0> tut.id
+=> 1
+irb(main):009:0> Tutorial.where('course_id = 3')
+  Tutorial Load (0.7ms)  SELECT `tutorials`.* FROM `tutorials` WHERE (course_id = 3)
+=> #<ActiveRecord::Relation [#<Tutorial id: 1, course_id: 3, author_id: 1, tut_title: "MRSGREN", tut_content: "MRSGREN is an acronym used to remember the seven ma...", created_at: "2014-04-23 11:34:55", updated_at: "2014-04-23 11:34:55">]>
+irb(main):010:0> exit
+omnituts% clea
+-bash: clea: command not found
+omnituts% clear
+
+omnituts% rails generate controller BiologyTutorials
+      create  app/controllers/biology_tutorials_controller.rb
+      invoke  erb
+      create    app/views/biology_tutorials
+      invoke  test_unit
+      create    test/controllers/biology_tutorials_controller_test.rb
+      invoke  helper
+      create    app/helpers/biology_tutorials_helper.rb
+      invoke    test_unit
+      create      test/helpers/biology_tutorials_helper_test.rb
+      invoke  assets
+      invoke    js
+      create      app/assets/javascripts/biology_tutorials.js
+      invoke    scss
+      create      app/assets/stylesheets/biology_tutorials.css.scss
+omnituts% things
+Usage: things [options] today|next|inbox|someday|logbook|trash
+
+Options:
+    -d, --database FILENAME          Use the specified Things database
+    -c, --completed                  Shows only completed tasks
+    -a, --all                        Shows all tasks in the focus
+    -t, --tag TAG                    Filter tasks by tag
+    -h, --help                       Shows this help message
+    -v, --version                    Shows version
+omnituts% things today
+/Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/things-rb-0.4.0/lib/things/document.rb:36:in `read': No such file or directory - /Users/Robosaad/Library/Application Support/Cultured Code/Things/Database.xml (Errno::ENOENT)
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/things-rb-0.4.0/lib/things/document.rb:36:in `parse!'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/things-rb-0.4.0/lib/things/document.rb:10:in `initialize'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/things-rb-0.4.0/lib/things.rb:32:in `new'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/things-rb-0.4.0/lib/things.rb:32:in `new'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/things-rb-0.4.0/bin/things:49:in `<top (required)>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/bin/things:23:in `load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/bin/things:23:in `<main>'
+omnituts% 
+omnituts% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> course = Course.create(:course_name => 'English Language')
+   (1.3ms)  BEGIN
+  SQL (70.5ms)  INSERT INTO `courses` (`course_name`, `created_at`, `updated_at`) VALUES ('English Language', '2014-04-23 14:00:49', '2014-04-23 14:00:49')
+   (3.9ms)  COMMIT
+=> #<Course id: 1, course_name: "English Language", course_description: "An exciting description about an exciting new cours...", num_of_tuts: 0, num_of_enrollments: 0, created_at: "2014-04-23 14:00:49", updated_at: "2014-04-23 14:00:49">
+irb(main):002:0> courseo = Course.create(:course_name => "English Literature")
+   (0.2ms)  BEGIN
+  SQL (5.9ms)  INSERT INTO `courses` (`course_name`, `created_at`, `updated_at`) VALUES ('English Literature', '2014-04-23 14:01:12', '2014-04-23 14:01:12')
+   (21.6ms)  COMMIT
+=> #<Course id: 2, course_name: "English Literature", course_description: "An exciting description about an exciting new cours...", num_of_tuts: 0, num_of_enrollments: 0, created_at: "2014-04-23 14:01:12", updated_at: "2014-04-23 14:01:12">
+irb(main):003:0> courset = Course.create(:course_name => 'Biology')
+   (0.2ms)  BEGIN
+  SQL (0.4ms)  INSERT INTO `courses` (`course_name`, `created_at`, `updated_at`) VALUES ('Biology', '2014-04-23 14:01:41', '2014-04-23 14:01:41')
+   (2.0ms)  COMMIT
+=> #<Course id: 3, course_name: "Biology", course_description: "An exciting description about an exciting new cours...", num_of_tuts: 0, num_of_enrollments: 0, created_at: "2014-04-23 14:01:41", updated_at: "2014-04-23 14:01:41">
+irb(main):004:0> exit
+omnituts% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> course = Course.find('3')
+  Course Load (4.3ms)  SELECT `courses`.* FROM `courses` WHERE `courses`.`id` = 3 LIMIT 1
+=> #<Course id: 3, course_name: "Biology", course_description: "An exciting description about an exciting new cours...", num_of_tuts: 0, num_of_enrollments: 0, created_at: "2014-04-23 14:01:41", updated_at: "2014-04-23 14:01:41">
+irb(main):002:0> exit
+omnituts% exit
+logout
+
+[Process completed]
+

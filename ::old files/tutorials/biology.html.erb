@@ -1,0 +1,3 @@
+<% @biotuts.each do |biotut| %>
+  <%= link_to(biotut.tut_title, {:action => 'biology_tutorial', :id => biotut.id}) %>
+<% end %>

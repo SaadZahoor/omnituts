@@ -1,0 +1,40 @@
+.tutorial-flash-notice {
+  background-color: #4AB046;
+  //color: #0E800A; 
+  color: #084506;
+  padding: 10px;
+  padding-left: 15px;
+}
+.tutorial-flash-notice-close-button {
+  float: right;
+  clear: right;
+  cursor: pointer;
+}
+.hide-flash-notice { display: none; }
+.display-header {
+  border: 1px solid black;
+  width: 100%;
+  overflow: hidden;
+  padding: 0px;
+  margin-bottom: -15px;
+  li {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+  }
+}
+.display-content {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 100%;
+  overflow: hidden;
+  padding: 0px;
+  margin-top: 15px;
+  margin-bottom: -15px;
+  li {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+  }
+}

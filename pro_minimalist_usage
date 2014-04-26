@@ -1,0 +1,105 @@
+Last login: Sat Apr 26 01:53:11 on ttys000
+~% cd Desktop/files/omnituts/omnituts
+omnituts% rails generate controller Chemistry
+      create  app/controllers/chemistry_controller.rb
+      invoke  erb
+      create    app/views/chemistry
+      invoke  test_unit
+      create    test/controllers/chemistry_controller_test.rb
+      invoke  helper
+      create    app/helpers/chemistry_helper.rb
+      invoke    test_unit
+      create      test/helpers/chemistry_helper_test.rb
+      invoke  assets
+      invoke    js
+      create      app/assets/javascripts/chemistry.js
+      invoke    scss
+      create      app/assets/stylesheets/chemistry.css.scss
+omnituts% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> course = Course.create(:course_name => "Chemistry")
+   (0.2ms)  BEGIN
+  SQL (65.3ms)  INSERT INTO `courses` (`course_name`, `created_at`, `updated_at`) VALUES ('Chemistry', '2014-04-25 23:26:27', '2014-04-25 23:26:27')
+   (4.0ms)  COMMIT
+=> #<Course id: 4, course_name: "Chemistry", course_description: "An exciting description about an exciting new cours...", num_of_tuts: 0, num_of_enrollments: 0, created_at: "2014-04-25 23:26:27", updated_at: "2014-04-25 23:26:27">
+irb(main):002:0> tut = Tutorial.create(:course_id => 4, :author_id => 1, :tut_title => 'Ionic Bonding', :tut_content => 'Ionic bonding is the bonding of a cation and an anion.')
+   (0.2ms)  BEGIN
+  SQL (0.4ms)  INSERT INTO `tutorials` (`author_id`, `course_id`, `created_at`, `tut_content`, `tut_title`, `updated_at`) VALUES (1, 4, '2014-04-25 23:28:10', 'Ionic bonding is the bonding of a cation and an anion.', 'Ionic Bonding', '2014-04-25 23:28:10')
+   (5.7ms)  COMMIT
+=> #<Tutorial id: 3, course_id: 4, author_id: 1, tut_title: "Ionic Bonding", tut_content: "Ionic bonding is the bonding of a cation and an ani...", created_at: "2014-04-25 23:28:10", updated_at: "2014-04-25 23:28:10">
+irb(main):003:0> exit
+omnituts% git add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'db/migrate/20140421164245_create_admins_tutorials_join.rb' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+omnituts% ls
+::old files	Rakefile	config.ru	omnitutsv2	vendor
+Gemfile		app		db		public
+Gemfile.lock	bin		lib		test
+README.rdoc	config		log		tmp
+omnituts% git add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'db/migrate/20140421164245_create_admins_tutorials_join.rb' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+omnituts% git add --all .
+omnituts% bundle install
+Fetching gem metadata from https://rubygems.org/...........
+Fetching additional metadata from https://rubygems.org/..
+Resolving dependencies...
+Using rake (10.3.1)
+Using i18n (0.6.9)
+Using minitest (4.7.5)
+Using multi_json (1.9.2)
+Using thread_safe (0.3.3)
+Using tzinfo (0.3.39)
+Using activesupport (4.0.4)
+Using builder (3.1.4)
+Using erubis (2.7.0)
+Using rack (1.5.2)
+Using rack-test (0.6.2)
+Using actionpack (4.0.4)
+Using mime-types (1.25.1)
+Using polyglot (0.3.4)
+Using treetop (1.4.15)
+Using mail (2.5.4)
+Using actionmailer (4.0.4)
+Using activemodel (4.0.4)
+Using activerecord-deprecated_finders (1.0.3)
+Using arel (4.0.2)
+Using activerecord (4.0.4)
+Using bundler (1.5.1)
+Using sass (3.2.19)
+Installing font-awesome-sass (4.0.3.1)
+Using hike (1.2.3)
+Using json (1.8.1)
+Using mysql2 (0.3.15)
+Using thor (0.19.1)
+Using railties (4.0.4)
+Using tilt (1.4.1)
+Using sprockets (2.11.0)
+Using sprockets-rails (2.0.1)
+Using rails (4.0.4)
+Using rdoc (4.1.1)
+Using sass-rails (4.0.3)
+Using sdoc (0.4.0)
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+omnituts% 

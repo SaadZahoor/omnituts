@@ -1,0 +1,14 @@
+<p class="index-action-tuts-introduction">Chemistry Tutorials</p>
+<% @chemtuts.each do |chemtut| %>
+  <div class="index-action-tut-container">
+    <p class="index-action-tut-title"><%= chemtut.tut_title %><span class="index-action-tut-upload-info"> Uploaded <%= chemtut.created_at.strftime("%B %d, %Y") %></span></p>
+    <p class="index-action-tut-content"><%= chemtut.tut_content %></p>
+    <div class="index-action-tut-actions">
+      <%= link_to("View", {:action => 'view', :id => chemtut.id}) %>
+      <%= link_to("Edit", {:action => 'edit', :id => chemtut.id}) %>
+      <%= link_to("Delete", {:action => 'delete', :id => chemtut.id}) %>
+    </div>
+  </div>
+<% end %>
+<br />
+<%= link_to("Add New Tutorial", {:action => 'new'}, :class => 'button-link') %>

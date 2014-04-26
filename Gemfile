@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
@@ -8,6 +9,11 @@ gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
+
+# Use Mercury Editor for editing pages
+# gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
+
+# gem 'paperclip'
 
 # Use Uglifier as compressor for JavaScript assets
 # gem 'uglifier', '>= 1.3.0'
@@ -31,6 +37,8 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+# s.extra_rdoc_files  = ["LICENSE", "POST_INSTALL"]
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,0 +1,37 @@
+<!--<table class="table table-condensed table-hover table-bordered" style="width:100%; margin-top: 10px;">
+  <thead>
+    <th style="width:5%; text-align:center;">ID</th>
+    <!--<th style="width:15%; text-align:center;">Course</th>-->
+    <th style="width:10%; text-align:center;">Course</th>
+    <!--<th style="width:15%; text-align:center;">Title</th>-->
+    <th style="width:10%; text-align:center;">Title</th>
+    <!--<th style="width:30%; text-align:center;">Content Snippet</th>-->
+    <th style="width:25%; text-align:center;">Content Snippet</th>
+    <th style="width:10%; text-align:center;">Admin Actions</th>
+  </thead>
+  <tbody>
+    <% @biotuts.each do |biotut| %>
+      <tr>
+        <td style="text-align:center; padding-top:8px"><%= biotut.id %></td>
+        <td style="text-align:center; padding-top:8px"><%= @course.course_name if biotut.course_id = @course.id %></td>
+        <td style="text-align:center; padding-top:8px"><%= biotut.tut_title %></td>
+        <!--<td style="text-align:center; padding-top:8px"><%= truncate(biotut.tut_content, :length => 55, :omission => "...") %></td>-->
+        <td style="text-align:center; padding-top:8px"><%= truncate(biotut.tut_content, :length => 50, :omission => "...") %></td>
+        <td>
+          <div class="btn-group" style="margin-left:15px; margin-right:-15px;">
+            <!--<% link_to("View", {:action => 'view', :id => biotut.id}, :class => 'btn btn-primary') %>
+            <%= link_to("Edit", {:action => 'edit', :id => biotut.id}, :class => 'btn') %>
+            <%= link_to("Delete", {:action => 'delete', :id => biotut.id}, :class => 'btn btn-danger') %>
+            <%= link_to({:action => 'new'}, :class => 'btn btn-success pull-right') do %>
+              <i class="icon-plus"></i>
+            <% end %>-->
+            <%= link_to("View", {:action => 'view', :id => biotut.id}) %>
+            <%= link_to("Edit", {:action => 'edit', :id => biotut.id}) %>
+            <%= link_to("Delete", {:action => 'delete', :id => biotut.id}) %>
+            <%= link_to("New", {:action => 'new'}) %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>-->

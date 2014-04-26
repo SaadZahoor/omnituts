@@ -1,0 +1,24 @@
+<ul class="display-header">
+  <li style="width: 5%;"><strong>ID</strong></li>
+  <li style="width: 12%;"><strong>Course</strong></li>
+  <li style="width: 19.5%;"><strong>Title</strong></li>
+  <li style="width: 40.3%;"><strong>Content Snippet</strong></li>
+  <li style="width: 12%;"><strong>Admin Actions</strong></li>
+</ul>
+<% @biotuts.each do |biotut| %>
+  <ul class="display-content">
+    <li style="width: 5%;"><%= biotut.id %></li>
+    <li style="width: 12%;"><%= @course.course_name if biotut.course_id = @course.id %></li>
+    <li style="width: 19.5%;"><%= biotut.tut_title %></li>
+    <li style="width: 40.3%;"><%= truncate(biotut.tut_content, :length => 40, :omission => '...') %></li>
+    <li style="width: 12%;">
+      <%= link_to("View", {:action => 'view', :id => biotut.id}) %>
+      <%= link_to("Edit", {:action => 'edit', :id => biotut.id}) %>
+      <%= link_to("Delete", {:action => 'delete', :id => biotut.id}) %>
+    </li>
+  </ul>
+<% end %>
+<br /><br />
+<%= link_to({:action => 'new'}) do %>
+  <button class="btn">Add New Tutorial</button>
+<% end %>

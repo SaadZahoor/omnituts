@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <%= javascript_include_tag('jquery') %>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <%= stylesheet_link_tag('application') %>
+  <title>Tutorials</title>
+</head>
+<body>
+  <nav>
+    <div class="handle">Menu<i class="fa fa-bars"></i></div>
+    <ul>
+      <a href="index.html" class="brand menu-item"><li>Omnituts</li></a>
+      <a href="index.html" class="menu-item"><li>Home</li></a>
+      <a href="#" class="menu-item"><li>About</li></a>
+      <%= link_to({:controller => :biology_tutorials, :action => 'index'}, :class => 'menu-item') do %>
+        <li>Biology</li>
+      <% end %>
+      <%= link_to({:controller => :chemistry, :action => 'index'}, :class => 'menu-item') do %>
+        <li>Chemistry</li>
+      <% end %>
+      <%= link_to({:controller => :physics_tutorials, :action => 'index'}, :class => 'menu-item') do %>
+        <li>Physics</li>
+      <% end %>
+      <a href="#" class="menu-item"><li>Contact</li></a>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <% if !flash[:notice].blank? %>
+      <div class="tutorial-flash-notice">
+        <%= flash[:notice] %><span style="float: right; clear: right;" class="tutorial-flash-notice-close-button"><i class="fa fa-times"></i></span>
+      </div>
+    <% end %>
+    <%= yield %>
+  </div>
+  
+  <script>
+    $('.handle').on('click', function() {
+      $('nav ul').toggleClass('showing');
+    });
+    $('.tutorial-flash-notice-close-button').on('click', function() {
+      $('.tutorial-flash-notice').toggleClass('hide-flash-notice');
+    });
+  </script>
+</body>
+</html>

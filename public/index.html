@@ -1,1 +1,37 @@
-<h1>Hello, World!</h1>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" type="text/css"/>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0-rc1/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <title>Tutorials</title>
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-static-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to("Omnituts", "/index.html", :class => 'brand') %>
+          <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="active"><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">Tutorials</a>
+              <ul class="dropdown-menu">
+                <li class="active"><%= link_to("Biology", {:controller => :biology_tutorials, :action => 'index'}) %></li>
+                <li><%= link_to("Chemistry", {:controller => :chemistry_tutorials, :action => 'index'}) %></li>
+                <li><%= link_to("Physics", {:controller => :physics_tutorials, :action => 'index'}) %></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <div class="container">
+    <h1>Hello, World!</h1>
+  </div>
+  <script type="text/javascript">
+    $('.dropdown-toggle').dropdown();
+  </script>
+</body>
+</html>

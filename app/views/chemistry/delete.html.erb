@@ -1,0 +1,8 @@
+<%= form_for(:chemtut, :url => {:action => 'destroy', :id => @chemtut.id}) do |f| %>
+  <p class="delete-action-text">Are you sure you want to delete this tutorial?</p>
+  <p class="delete-action-warning-text">(This is irreversible.)</p>
+  <p class="delete-action-tut-title"><%= @chemtut.tut_title %></p>
+  <%= submit_tag("Delete Tutorial", :class => "form-submit-button") %>
+<% end %>
+<br />
+<%= link_to("Back to tutorials", {:action => 'index'}, :class => 'tut-back-link') %>
