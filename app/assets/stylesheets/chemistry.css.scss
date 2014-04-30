@@ -146,6 +146,18 @@ input[type=text] {
   background-color: #ededed;
 }
 input[type=text]:focus { outline: none; }
+input[type=password] {
+  -webkit-appearance: none;
+  border-radius: 3px;
+  border: 1px solid #aaa;
+  width: 200px;
+  height: 30px;
+  padding-left: 11px;
+  font-family: Helvetica;
+  font-size: 14px;
+  background-color: #ededed;
+}
+input[type=password]:focus { outline: none; }
 select {
   -webkit-appearance: none;
   border-radius: 3px;

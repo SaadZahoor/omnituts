@@ -1,6 +1,14 @@
 Omnituts::Application.routes.draw do
-
+  
+  # Root Route
+  root :to => 'manage#index'
+  
+  get 'admin', :to => 'manage#index'
+  get 'login', :to => 'manage#login'
+  
+  # Default Route
   match ":controller(/:action(/:id(.:format)))", :via => [:get, :post]
+  
   # mount Mercury::Engine => '/'
 
   # The priority is based upon order of creation: first created -> highest priority.

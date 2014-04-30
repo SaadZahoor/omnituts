@@ -1,6 +1,8 @@
 class BiologyTutorialsController < ApplicationController
 
   layout 'tutorial_listing'
+  
+  before_action :confirm_logged_in
 
   def index
     @biotuts = Tutorial.where('course_id = 3')

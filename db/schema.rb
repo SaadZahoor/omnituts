@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421204938) do
+ActiveRecord::Schema.define(version: 20140430214250) do
 
   create_table "admins", force: true do |t|
-    t.string   "username",    limit: 30,                          null: false
-    t.string   "password",                                        null: false
-    t.string   "first_name",             default: "Unspecified."
-    t.string   "last_name",              default: "Unspecified."
-    t.string   "email",                  default: "Unspecified."
-    t.integer  "num_of_tuts",            default: 0
+    t.string   "username",        limit: 30
+    t.string   "first_name",                 default: "Unspecified."
+    t.string   "last_name",                  default: "Unspecified."
+    t.string   "email",                      default: "Unspecified."
+    t.integer  "num_of_tuts",                default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email", using: :btree

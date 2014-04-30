@@ -10,7 +10,6 @@
  *
  *= require_self
  *= require styles
- *= require sdr-buttons
- *= require tutorial_listing
+ *= require default-layout
  *= require chemistry
  */

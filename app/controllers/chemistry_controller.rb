@@ -1,5 +1,6 @@
 class ChemistryController < ApplicationController
   layout 'tutorial_listing'
+  before_action :confirm_logged_in
   def index
     @chemtuts = Tutorial.where('course_id = 4')
     @course = Course.find(4)
@@ -13,7 +14,10 @@ class ChemistryController < ApplicationController
   end
   def create
     @chemtut = Tutorial.new(tut_params)
+    @courses = Course.order('id ASC')
+    chemistry = Course.find(4)
     if @chemtut.save
+      chemistry.num_of_tuts += 1
       flash[:notice] = "Tutorial created successfully"
       redirect_to(:action => 'index')
     else
@@ -26,6 +30,7 @@ class ChemistryController < ApplicationController
   end
   def update
     @chemtut = Tutorial.find(params[:id])
+    @courses = Course.order('id ASC')
     if @chemtut.update_attributes(tut_params)
       flash[:notice] = "Tutorial updated successfully."
       redirect_to(:action => 'view', :id => @chemtut.id)
@@ -38,6 +43,8 @@ class ChemistryController < ApplicationController
   end
   def destroy
     chemtut = Tutorial.find(params[:id]).destroy
+    chemistry = Course.find(4)
+    chemistry.num_of_tuts -= 1
     flash[:notice] = "Tutorial #{chemtut.tut_title} deleted successfully."
     redirect_to(:action => 'index')
   end

@@ -1,0 +1,2358 @@
+Last login: Tue Apr 29 23:10:54 on ttys000
+~% gem install capistrano
+Fetching: net-ssh-2.8.0.gem (100%)
+Successfully installed net-ssh-2.8.0
+Fetching: net-scp-1.2.0.gem (100%)
+Successfully installed net-scp-1.2.0
+Fetching: tins-1.1.0.gem (100%)
+Successfully installed tins-1.1.0
+Fetching: term-ansicolor-1.3.0.gem (100%)
+Successfully installed term-ansicolor-1.3.0
+Fetching: sshkit-1.4.0.gem (100%)
+Successfully installed sshkit-1.4.0
+Fetching: capistrano-3.2.1.gem (100%)
+Capistrano 3.1 has some breaking changes, like `deploy:restart` callback should be added manually to your deploy.rb. Please, check the CHANGELOG: http://goo.gl/SxB0lr
+
+If you're upgrading Capistrano from 2.x, we recommend to read the upgrade guide: http://goo.gl/4536kB
+Successfully installed capistrano-3.2.1
+Parsing documentation for capistrano-3.2.1
+Installing ri documentation for capistrano-3.2.1
+Parsing documentation for net-scp-1.2.0
+Installing ri documentation for net-scp-1.2.0
+Parsing documentation for net-ssh-2.8.0
+Installing ri documentation for net-ssh-2.8.0
+Parsing documentation for sshkit-1.4.0
+Installing ri documentation for sshkit-1.4.0
+Parsing documentation for term-ansicolor-1.3.0
+Installing ri documentation for term-ansicolor-1.3.0
+Parsing documentation for tins-1.1.0
+Installing ri documentation for tins-1.1.0
+Done installing documentation for capistrano, net-scp, net-ssh, sshkit, term-ansicolor, tins after 7 seconds
+6 gems installed
+~% cd ~/bin
+-bash: cd: /Users/Robosaad/bin: No such file or directory
+~% cd bin
+-bash: cd: bin: No such file or directory
+~% cd /bin
+bin% ls
+[		df		launchctl	pwd		sync
+bash		domainname	link		rails		tcsh
+cat		echo		ln		rcp		test
+chmod		ed		ls		rm		unlink
+cp		expr		mkdir		rmdir		wait4path
+csh		hostname	mv		sh		zsh
+date		kill		pax		sleep
+dd		ksh		ps		stty
+bin% ln -s /Applications/TextMate.app/Contents/Resources/mate /bin/mate
+ln: /bin/mate: Permission denied
+bin% sudo ln -s /Applications/TextMate.app/Contents/Resources/mate /bin/mate
+Password:
+bin% mate
+bin% cd
+~% cd desktop/files/progdocs/ruby/lynda/learning_rails
+learning_rails% mate .
+learning_rails% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> exit
+learning_rails% clear
+
+learning_rails% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> s = Subject.new
+=> #<Subject id: nil, name: nil, position: nil, visible: false, created_at: nil, updated_at: nil>
+irb(main):002:0> s.errors
+=> #<ActiveModel::Errors:0x007fbee5a00450 @base=#<Subject id: nil, name: nil, position: nil, visible: false, created_at: nil, updated_at: nil>, @messages={}>
+irb(main):003:0> 
+irb(main):004:0* s.valid?
+=> false
+irb(main):005:0> s.errors
+=> #<ActiveModel::Errors:0x007fbee5a00450 @base=#<Subject id: nil, name: nil, position: nil, visible: false, created_at: nil, updated_at: nil>, @messages={:name=>["can't be blank"]}>
+irb(main):006:0> s.errors.full_messages
+=> ["Name can't be blank"]
+irb(main):007:0> s.name = 'test'
+=> "test"
+irb(main):008:0> s.errors
+=> #<ActiveModel::Errors:0x007fbee5a00450 @base=#<Subject id: nil, name: "test", position: nil, visible: false, created_at: nil, updated_at: nil>, @messages={:name=>["can't be blank"]}>
+irb(main):009:0> s.errors.clear
+=> {}
+irb(main):010:0> s.valid?
+=> true
+irb(main):011:0> s.errors
+=> #<ActiveModel::Errors:0x007fbee5a00450 @base=#<Subject id: nil, name: "test", position: nil, visible: false, created_at: nil, updated_at: nil>, @messages={}>
+irb(main):012:0> s.name = 'x' * 300
+=> "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+irb(main):013:0> s.valid?
+=> false
+irb(main):014:0> s.errors
+=> #<ActiveModel::Errors:0x007fbee5a00450 @base=#<Subject id: nil, name: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...", position: nil, visible: false, created_at: nil, updated_at: nil>, @messages={:name=>["is too long (maximum is 255 characters)"]}>
+irb(main):015:0> s.errors.full_messages
+=> ["Name is too long (maximum is 255 characters)"]
+irb(main):016:0> u = AdminUser.new(:first_name => "John", :last_name => "Doe", :username => "johndoe")
+SyntaxError: /Users/Robosaad/Desktop/files/ProgDocs/ruby/lynda/learning_rails/app/models/admin_user.rb:10: unknown regexp option - Z
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:424:in `load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:424:in `block in load_file'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:616:in `new_constants_in'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:423:in `load_file'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:324:in `require_or_load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:463:in `load_missing_constant'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:184:in `const_missing'
+	from (irb):16
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:90:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:9:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+irb(main):017:0> u = AdminUser.new(:first_name => "John", :last_name => "Doe", :username => "johndoe")
+=> #<AdminUser id: nil, first_name: "John", last_name: "Doe", email: "", username: "johndoe", hashed_password: nil, created_at: nil, updated_at: nil>
+irb(main):018:0> u.valid?
+  AdminUser Exists (50.2ms)  SELECT 1 AS one FROM `admin_users` WHERE `admin_users`.`username` = BINARY 'johndoe' LIMIT 1
+=> false
+irb(main):019:0> u.errors.full_message
+ArgumentError: wrong number of arguments (0 for 2)
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activemodel-4.0.4/lib/active_model/errors.rb:370:in `full_message'
+	from (irb):19
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:90:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:9:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+irb(main):020:0> u.errors.full_messages
+=> ["Username is too short (minimum is 8 characters)", "Email can't be blank", "Email is invalid"]
+irb(main):021:0> u.username = 'jonathandoe'
+=> "jonathandoe"
+irb(main):022:0> AdminUser.al
+NoMethodError: undefined method `al' for #<Class:0x007fbee58620d0>
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activerecord-4.0.4/lib/active_record/dynamic_matchers.rb:22:in `method_missing'
+	from (irb):22
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:90:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:9:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+irb(main):023:0> AdminUser.all
+  AdminUser Load (4.9ms)  SELECT `admin_users`.* FROM `admin_users`
+=> #<ActiveRecord::Relation [#<AdminUser id: 1, first_name: "Saad Atif", last_name: "Zahoor", email: "", username: "satza", hashed_password: nil, created_at: "2014-04-11 21:07:47", updated_at: "2014-04-11 21:07:47">]>
+irb(main):024:0> u.valid?
+  AdminUser Exists (0.7ms)  SELECT 1 AS one FROM `admin_users` WHERE `admin_users`.`username` = BINARY 'jonathandoe' LIMIT 1
+=> false
+irb(main):025:0> u.errors.full_messages
+=> ["Email can't be blank", "Email is invalid"]
+irb(main):026:0> u.username = 'johndoe123'
+=> "johndoe123"
+irb(main):027:0> u.email = 'nowhere.com'
+=> "nowhere.com"
+irb(main):028:0> u.valid?
+  AdminUser Exists (0.7ms)  SELECT 1 AS one FROM `admin_users` WHERE `admin_users`.`username` = BINARY 'johndoe123' LIMIT 1
+=> false
+irb(main):029:0> u.errors.full_messages
+=> ["Email is invalid"]
+irb(main):030:0> u.email = 'nobody@nowhere.com'
+=> "nobody@nowhere.com"
+irb(main):031:0> u.valid?
+  AdminUser Exists (0.8ms)  SELECT 1 AS one FROM `admin_users` WHERE `admin_users`.`username` = BINARY 'johndoe123' LIMIT 1
+=> true
+irb(main):032:0> u.errors.full_messages
+=> []
+irb(main):033:0> u.email_confirmation = 'nobody@nowhere.com'
+=> "nobody@nowhere.com"
+irb(main):034:0> u.valid?
+  AdminUser Exists (0.6ms)  SELECT 1 AS one FROM `admin_users` WHERE `admin_users`.`username` = BINARY 'johndoe123' LIMIT 1
+=> true
+irb(main):035:0> u.errors.full_messages
+=> []
+irb(main):036:0> exit
+learning_rails% cd
+~% gem install capistrano-ext
+Fetching: capistrano-ext-1.2.1.gem (100%)
+Successfully installed capistrano-ext-1.2.1
+Parsing documentation for capistrano-ext-1.2.1
+Installing ri documentation for capistrano-ext-1.2.1
+Done installing documentation for capistrano-ext after 0 seconds
+1 gem installed
+~% clear
+
+~% cd desktop/files/progdocs/ruby/lynda/learning_rails
+learning_rails% bundle install
+Fetching gem metadata from https://rubygems.org/..........
+Fetching additional metadata from https://rubygems.org/..
+Resolving dependencies...
+Could not find gem 'bcrypt-ruby (~> 3.1.7) ruby' in the gems available on this
+machine.
+learning_rails% bundle install
+Fetching gem metadata from https://rubygems.org/..........
+Fetching additional metadata from https://rubygems.org/..
+Resolving dependencies...
+Using rake (10.2.2)
+Using i18n (0.6.9)
+Using minitest (4.7.5)
+Using multi_json (1.9.2)
+Using atomic (1.1.16)
+Using thread_safe (0.3.1)
+Using tzinfo (0.3.39)
+Using activesupport (4.0.4)
+Using builder (3.1.4)
+Using erubis (2.7.0)
+Using rack (1.5.2)
+Using rack-test (0.6.2)
+Using actionpack (4.0.4)
+Using mime-types (1.25.1)
+Using polyglot (0.3.4)
+Using treetop (1.4.15)
+Using mail (2.5.4)
+Using actionmailer (4.0.4)
+Using activemodel (4.0.4)
+Using activerecord-deprecated_finders (1.0.3)
+Using arel (4.0.2)
+Using activerecord (4.0.4)
+Installing bcrypt (3.1.7)
+Using bundler (1.5.1)
+Using hike (1.2.3)
+Using json (1.8.1)
+Using mysql2 (0.3.15)
+Using thor (0.19.1)
+Using railties (4.0.4)
+Using tilt (1.4.1)
+Using sprockets (2.11.0)
+Using sprockets-rails (2.0.1)
+Using rails (4.0.4)
+Using rdoc (4.1.1)
+Using sdoc (0.4.0)
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+learning_rails% clear
+
+learning_rails% rails generate migration AddPaswordDigestToAdminUsers
+      invoke  active_record
+      create    db/migrate/20140430193242_add_pasword_digest_to_admin_users.rb
+learning_rails% rake db:migrate
+rake aborted!
+Gem::LoadError: You have already activated rake 10.3.1, but your Gemfile requires rake 10.2.2. Prepending `bundle exec` to your command may solve this.
+/Users/Robosaad/Desktop/files/ProgDocs/ruby/lynda/learning_rails/config/boot.rb:4:in `<top (required)>'
+/Users/Robosaad/Desktop/files/ProgDocs/ruby/lynda/learning_rails/config/application.rb:1:in `<top (required)>'
+/Users/Robosaad/Desktop/files/ProgDocs/ruby/lynda/learning_rails/Rakefile:4:in `<top (required)>'
+(See full trace by running task with --trace)
+learning_rails% bundle exec rake db:migrate
+== 20140430193242 AddPaswordDigestToAdminUsers: migrating =====================
+-- remove_column(:admin_users, :hashed_password)
+   -> 0.1231s
+-- add_column(:admin_users, :password_digest, :string)
+   -> 0.0467s
+== 20140430193242 AddPaswordDigestToAdminUsers: migrated (0.1700s) ============
+
+learning_rails% clear
+
+learning_rails% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> user = AdminUser.find(1)
+  AdminUser Load (3.1ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1
+=> #<AdminUser id: 1, first_name: "Saad Atif", last_name: "Zahoor", email: "", username: "satza", created_at: "2014-04-11 21:07:47", updated_at: "2014-04-11 21:07:47", password_digest: nil>
+irb(main):002:0> user.password = 'testpassword'
+=> "testpassword"
+irb(main):003:0> user.password_digest
+=> "$2a$10$tul48D7iWh8u/Pe7oSZbuOL/zoGG64C7SUdODyZozeau/SSQtgwdy"
+irb(main):004:0> user.save
+   (0.3ms)  BEGIN
+  AdminUser Exists (0.5ms)  SELECT 1 AS one FROM `admin_users` WHERE (`admin_users`.`username` = BINARY 'satza' AND `admin_users`.`id` != 1) LIMIT 1
+   (0.2ms)  ROLLBACK
+=> false
+irb(main):005:0> user.errors.full_messages
+=> ["Password confirmation can't be blank", "Username is too short (minimum is 8 characters)", "Email can't be blank", "Email is invalid"]
+irb(main):006:0> user.email = 'saad@omnituts.com'
+=> "saad@omnituts.com"
+irb(main):007:0> exit
+learning_rails% clear
+
+learning_rails% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> user = AdminUser.find(1)
+  AdminUser Load (0.4ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1
+=> #<AdminUser id: 1, first_name: "Saad Atif", last_name: "Zahoor", email: "", username: "satza", created_at: "2014-04-11 21:07:47", updated_at: "2014-04-11 21:07:47", password_digest: nil>
+irb(main):002:0> user.password = 'testpassword'
+=> "testpassword"
+irb(main):003:0> user.password_digest
+=> "$2a$10$7WJOCDb2k/kPD2LDAvtsv.5hta1xsrMQseOF7YGM5A/Q1RCzhLeKK"
+irb(main):004:0> user.save
+   (0.3ms)  BEGIN
+  AdminUser Exists (0.5ms)  SELECT 1 AS one FROM `admin_users` WHERE (`admin_users`.`username` = BINARY 'satza' AND `admin_users`.`id` != 1) LIMIT 1
+   (0.2ms)  ROLLBACK
+=> false
+irb(main):005:0> user.errors.full_messages
+=> ["Password confirmation can't be blank", "Email can't be blank", "Email is invalid"]
+irb(main):006:0> user.email = 'saad@omnituts.com'
+=> "saad@omnituts.com"
+irb(main):007:0> user.password_confirmation = 'testpassword'
+=> "testpassword"
+irb(main):008:0> user.save
+   (0.2ms)  BEGIN
+  AdminUser Exists (0.5ms)  SELECT 1 AS one FROM `admin_users` WHERE (`admin_users`.`username` = BINARY 'satza' AND `admin_users`.`id` != 1) LIMIT 1
+  SQL (51.8ms)  UPDATE `admin_users` SET `password_digest` = '$2a$10$7WJOCDb2k/kPD2LDAvtsv.5hta1xsrMQseOF7YGM5A/Q1RCzhLeKK', `email` = 'saad@omnituts.com', `updated_at` = '2014-04-30 19:41:29' WHERE `admin_users`.`id` = 1
+   (6.7ms)  COMMIT
+=> true
+irb(main):009:0> user.authenticate("notthepassword")
+=> false
+irb(main):010:0> user.authenticate("testpassword")
+=> #<AdminUser id: 1, first_name: "Saad Atif", last_name: "Zahoor", email: "saad@omnituts.com", username: "satza", created_at: "2014-04-11 21:07:47", updated_at: "2014-04-30 19:41:29", password_digest: "$2a$10$7WJOCDb2k/kPD2LDAvtsv.5hta1xsrMQseOF7YGM5A/Q...">
+irb(main):011:0> exit
+learning_rails% clear
+
+learning_rails% pwd
+/Users/Robosaad/desktop/files/progdocs/ruby/lynda/learning_rails
+learning_rails% rails generate controller Access index login
+      create  app/controllers/access_controller.rb
+       route  get "access/login"
+       route  get "access/index"
+      invoke  erb
+      create    app/views/access
+      create    app/views/access/index.html.erb
+      create    app/views/access/login.html.erb
+      invoke  test_unit
+      create    test/controllers/access_controller_test.rb
+      invoke  helper
+      create    app/helpers/access_helper.rb
+      invoke    test_unit
+      create      test/helpers/access_helper_test.rb
+      invoke  assets
+      invoke    js
+      create      app/assets/javascripts/access.js
+      invoke    css
+      create      app/assets/stylesheets/access.css
+learning_rails% rails server
+=> Booting WEBrick
+=> Rails 4.0.4 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2014-04-30 23:13:21] INFO  WEBrick 1.3.1
+[2014-04-30 23:13:21] INFO  ruby 2.1.0 (2013-09-22) [x86_64-darwin13.0.0]
+[2014-04-30 23:13:21] INFO  WEBrick::HTTPServer#start: pid=99205 port=3000
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-30 23:13:25 +0300
+  ActiveRecord::SchemaMigration Load (0.4ms)  SELECT `schema_migrations`.* FROM `schema_migrations`
+Processing by DemoController#index as HTML
+  Rendered demo/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/demo.js?body=1" for 127.0.0.1 at 2014-04-30 23:13:25 +0300
+
+
+Started GET "/assets/public.js?body=1" for 127.0.0.1 at 2014-04-30 23:13:25 +0300
+
+
+Started GET "/subjects" for 127.0.0.1 at 2014-04-30 23:13:33 +0300
+Processing by SubjectsController#index as HTML
+   (7.0ms)  SELECT COUNT(*) FROM `subjects`
+  Subject Load (1.0ms)  SELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC
+   (0.4ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 1
+   (0.4ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 2
+   (0.3ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 4
+  Rendered subjects/index.html.erb within layouts/admin (105.1ms)
+Completed 200 OK in 188ms (Views: 133.9ms | ActiveRecord: 46.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:13:33 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:13:34 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:13:34 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:13:34 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:13:34 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:13:34 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:13:34 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:13:34 +0300
+
+
+Started GET "/assets/plus_sign.png" for 127.0.0.1 at 2014-04-30 23:13:34 +0300
+
+
+Started GET "/admin" for 127.0.0.1 at 2014-04-30 23:13:37 +0300
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `title=' for nil:NilClass):
+    1: <% @page.title = "Admin Menu" %>
+    2: <div class="menu">
+    3: 	<h2>Admin Menu</h2>
+    4: 	<div class="identity">Logged in as:</div>
+  app/views/access/index.html.erb:1:in `_app_views_access_index_html_erb___1546122858853488526_70175301648520'
+
+
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2014-04-30 23:14:10 +0300
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/demo.js?body=1" for 127.0.0.1 at 2014-04-30 23:14:10 +0300
+
+
+Started GET "/assets/public.js?body=1" for 127.0.0.1 at 2014-04-30 23:14:10 +0300
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:14:42 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 4ms
+
+SyntaxError (/Users/Robosaad/Desktop/files/ProgDocs/ruby/lynda/learning_rails/app/views/access/login.html.erb:17: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  actionpack (4.0.4) lib/action_view/template.rb:299:in `module_eval'
+  actionpack (4.0.4) lib/action_view/template.rb:299:in `compile'
+  actionpack (4.0.4) lib/action_view/template.rb:248:in `block in compile!'
+  actionpack (4.0.4) lib/action_view/template.rb:236:in `synchronize'
+  actionpack (4.0.4) lib/action_view/template.rb:236:in `compile!'
+  actionpack (4.0.4) lib/action_view/template.rb:142:in `block in render'
+  activesupport (4.0.4) lib/active_support/notifications.rb:161:in `instrument'
+  actionpack (4.0.4) lib/action_view/template.rb:141:in `render'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:49:in `block (2 levels) in render_template'
+  actionpack (4.0.4) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.4) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:48:in `block in render_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:56:in `render_with_layout'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.4) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:383:in `_run__3468776858178348127__process_action__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.4) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:674:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:373:in `_run__1605720868602301082__call__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.4) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.4) lib/rails/engine.rb:511:in `call'
+  railties (4.0.4) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.8ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:16:47 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 2ms
+
+SyntaxError (/Users/Robosaad/Desktop/files/ProgDocs/ruby/lynda/learning_rails/app/views/access/login.html.erb:23: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  actionpack (4.0.4) lib/action_view/template.rb:299:in `module_eval'
+  actionpack (4.0.4) lib/action_view/template.rb:299:in `compile'
+  actionpack (4.0.4) lib/action_view/template.rb:248:in `block in compile!'
+  actionpack (4.0.4) lib/action_view/template.rb:236:in `synchronize'
+  actionpack (4.0.4) lib/action_view/template.rb:236:in `compile!'
+  actionpack (4.0.4) lib/action_view/template.rb:142:in `block in render'
+  activesupport (4.0.4) lib/active_support/notifications.rb:161:in `instrument'
+  actionpack (4.0.4) lib/action_view/template.rb:141:in `render'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:49:in `block (2 levels) in render_template'
+  actionpack (4.0.4) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.4) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:48:in `block in render_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:56:in `render_with_layout'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.4) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:383:in `_run__3468776858178348127__process_action__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.4) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:674:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:373:in `_run__1605720868602301082__call__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.4) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.4) lib/rails/engine.rb:511:in `call'
+  railties (4.0.4) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:17:20 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/demo.js?body=1" for 127.0.0.1 at 2014-04-30 23:17:20 +0300
+
+
+Started GET "/assets/public.js?body=1" for 127.0.0.1 at 2014-04-30 23:17:20 +0300
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:17:49 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (3.3ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:17:49 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:17:49 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:17:49 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:17:49 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:17:49 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:17:49 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:17:49 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:17:49 +0300
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:18:03 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (3.3ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:18:03 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:18:03 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:18:03 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:18:03 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:18:03 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:18:03 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:18:03 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:18:03 +0300
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2014-04-30 23:18:04 +0300
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KMZybzU++/UM1sw8aZufvJ0mkSGa4G27btJ3+dmW+nI=", "username"=>"", "password"=>"[FILTERED]", "commit"=>"Log In"}
+Completed 500 Internal Server Error in 7ms
+
+NameError (undefined local variable or method `authorized_user' for #<AccessController:0x007fa5ebb1c8d8>):
+  app/controllers/access_controller.rb:20:in `attempt_login'
+
+
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.7ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2014-04-30 23:18:10 +0300
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KMZybzU++/UM1sw8aZufvJ0mkSGa4G27btJ3+dmW+nI=", "username"=>"sds", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  AdminUser Load (0.6ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`username` = 'sds' ORDER BY `admin_users`.`id` ASC LIMIT 1
+Completed 500 Internal Server Error in 54ms
+
+NameError (undefined local variable or method `authorized_user' for #<AccessController:0x007fa5eb658108>):
+  app/controllers/access_controller.rb:20:in `attempt_login'
+
+
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.6ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.4ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:19:17 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (3.0ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:19:18 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:19:18 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:19:18 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:19:18 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:19:18 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:19:18 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:19:18 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:19:18 +0300
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2014-04-30 23:19:22 +0300
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KMZybzU++/UM1sw8aZufvJ0mkSGa4G27btJ3+dmW+nI=", "username"=>"SaadZahoor", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  AdminUser Load (0.4ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`username` = 'SaadZahoor' ORDER BY `admin_users`.`id` ASC LIMIT 1
+Completed 500 Internal Server Error in 25ms
+
+ActionView::MissingTemplate (Missing template access/attempt_login, application/attempt_login with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby]}. Searched in:
+  * "/Users/Robosaad/Desktop/files/ProgDocs/ruby/lynda/learning_rails/app/views"
+):
+  actionpack (4.0.4) lib/action_view/path_set.rb:46:in `find'
+  actionpack (4.0.4) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (4.0.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:35:in `determine_template'
+  actionpack (4.0.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.4) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.4) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.0.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:383:in `_run__3468776858178348127__process_action__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.4) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.4) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.4) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.4) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:674:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:373:in `_run__1605720868602301082__call__callbacks'
+  activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.0.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.0.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.4) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.4) lib/rails/engine.rb:511:in `call'
+  railties (4.0.4) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.6ms)
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2014-04-30 23:20:48 +0300
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KMZybzU++/UM1sw8aZufvJ0mkSGa4G27btJ3+dmW+nI=", "username"=>"SaadZahoor", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  AdminUser Load (0.3ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`username` = 'SaadZahoor' ORDER BY `admin_users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 24ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:20:48 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.2ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:20:48 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:20:48 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:20:48 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:20:48 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:20:48 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:20:48 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:20:48 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:20:48 +0300
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2014-04-30 23:21:01 +0300
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KMZybzU++/UM1sw8aZufvJ0mkSGa4G27btJ3+dmW+nI=", "username"=>"satza", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  AdminUser Load (0.5ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`username` = 'satza' ORDER BY `admin_users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 109ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:21:02 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.6ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:02 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:02 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:02 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:02 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:02 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:02 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:02 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:02 +0300
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2014-04-30 23:21:15 +0300
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KMZybzU++/UM1sw8aZufvJ0mkSGa4G27btJ3+dmW+nI=", "username"=>"satza", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  AdminUser Load (0.4ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`username` = 'satza' ORDER BY `admin_users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 117ms (ActiveRecord: 19.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:21:15 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.2ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:15 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:15 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:15 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:15 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:15 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:15 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:15 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:15 +0300
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2014-04-30 23:21:22 +0300
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KMZybzU++/UM1sw8aZufvJ0mkSGa4G27btJ3+dmW+nI=", "username"=>"satza", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  AdminUser Load (0.5ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`username` = 'satza' ORDER BY `admin_users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 98ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:21:22 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.1ms)
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:22 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:22 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:22 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:22 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:22 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:22 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:22 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:21:22 +0300
+^C[2014-04-30 23:21:26] INFO  going to shutdown ...
+[2014-04-30 23:21:26] INFO  WEBrick::HTTPServer#start done.
+Exiting
+learning_rails% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> me = AdminUser.find(1)
+  AdminUser Load (0.4ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1
+=> #<AdminUser id: 1, first_name: "Saad Atif", last_name: "Zahoor", email: "saad@omnituts.com", username: "satza", created_at: "2014-04-11 21:07:47", updated_at: "2014-04-30 19:41:29", password_digest: "$2a$10$7WJOCDb2k/kPD2LDAvtsv.5hta1xsrMQseOF7YGM5A/Q...">
+irb(main):002:0> me.password = 'saad_Zahoor1234'
+=> "saad_Zahoor1234"
+irb(main):003:0> me.password_digest
+=> "$2a$10$3qEfc7ig3AgmaCJduIFdLeVEqkDvww3YMzgx1qGCJ/VTNqzzBmEj."
+irb(main):004:0> me.save
+   (0.2ms)  BEGIN
+  AdminUser Exists (0.4ms)  SELECT 1 AS one FROM `admin_users` WHERE (`admin_users`.`username` = BINARY 'satza' AND `admin_users`.`id` != 1) LIMIT 1
+   (0.1ms)  ROLLBACK
+=> false
+irb(main):005:0> me.errors.full_messages
+=> ["Password confirmation can't be blank"]
+irb(main):006:0> me.password_confirmation = 'saad_Zahoor1234'
+=> "saad_Zahoor1234"
+irb(main):007:0> me.save
+   (0.2ms)  BEGIN
+  AdminUser Exists (0.4ms)  SELECT 1 AS one FROM `admin_users` WHERE (`admin_users`.`username` = BINARY 'satza' AND `admin_users`.`id` != 1) LIMIT 1
+  SQL (0.5ms)  UPDATE `admin_users` SET `password_digest` = '$2a$10$3qEfc7ig3AgmaCJduIFdLeVEqkDvww3YMzgx1qGCJ/VTNqzzBmEj.', `updated_at` = '2014-04-30 20:23:00' WHERE `admin_users`.`id` = 1
+   (12.7ms)  COMMIT
+=> true
+irb(main):008:0> exit
+learning_rails% rails server
+=> Booting WEBrick
+=> Rails 4.0.4 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2014-04-30 23:23:10] INFO  WEBrick 1.3.1
+[2014-04-30 23:23:10] INFO  ruby 2.1.0 (2013-09-22) [x86_64-darwin13.0.0]
+[2014-04-30 23:23:10] INFO  WEBrick::HTTPServer#start: pid=99287 port=3000
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:23:11 +0300
+  ActiveRecord::SchemaMigration Load (0.3ms)  SELECT `schema_migrations`.* FROM `schema_migrations`
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (35.7ms)
+Completed 200 OK in 97ms (Views: 96.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:11 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:11 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:11 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:11 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:11 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:11 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:11 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:11 +0300
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2014-04-30 23:23:21 +0300
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KMZybzU++/UM1sw8aZufvJ0mkSGa4G27btJ3+dmW+nI=", "username"=>"satza", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  AdminUser Load (0.4ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`username` = 'satza' ORDER BY `admin_users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 140ms (ActiveRecord: 19.7ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:23:21 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.3ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:21 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:21 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:21 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:21 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:21 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:21 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:21 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:21 +0300
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2014-04-30 23:23:29 +0300
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KMZybzU++/UM1sw8aZufvJ0mkSGa4G27btJ3+dmW+nI=", "username"=>"satza", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  AdminUser Load (0.5ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`username` = 'satza' ORDER BY `admin_users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 99ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:23:29 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.1ms)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:29 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:30 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:30 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:30 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:30 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:30 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:30 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:23:30 +0300
+^C[2014-04-30 23:23:33] INFO  going to shutdown ...
+[2014-04-30 23:23:33] INFO  WEBrick::HTTPServer#start done.
+Exiting
+learning_rails% username = 'satza'
+-bash: username: command not found
+learning_rails% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> username = 'satza'
+=> "satza"
+irb(main):002:0> password = 'saad_Zahoor1234'
+=> "saad_Zahoor1234"
+irb(main):003:0> if username && password
+irb(main):004:1> if username && password then
+irb(main):005:2* found_user = AdminUser.where(:username => username).first
+irb(main):006:2> if found_user 
+irb(main):007:3> exit
+irb(main):008:3> exit
+irb(main):009:3> end
+irb(main):010:2> end
+irb(main):011:1> end
+  AdminUser Load (0.4ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`username` = 'satza' ORDER BY `admin_users`.`id` ASC LIMIT 1
+learning_rails% rails server
+=> Booting WEBrick
+=> Rails 4.0.4 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2014-04-30 23:25:24] INFO  WEBrick 1.3.1
+[2014-04-30 23:25:24] INFO  ruby 2.1.0 (2013-09-22) [x86_64-darwin13.0.0]
+[2014-04-30 23:25:24] INFO  WEBrick::HTTPServer#start: pid=99334 port=3000
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:25:25 +0300
+  ActiveRecord::SchemaMigration Load (0.3ms)  SELECT `schema_migrations`.* FROM `schema_migrations`
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (29.3ms)
+Completed 200 OK in 89ms (Views: 88.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:26 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:26 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:26 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:26 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:26 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:26 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:26 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:26 +0300
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2014-04-30 23:25:33 +0300
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KMZybzU++/UM1sw8aZufvJ0mkSGa4G27btJ3+dmW+nI=", "username"=>"satza", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  AdminUser Load (0.4ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`username` = 'satza' ORDER BY `admin_users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 138ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2014-04-30 23:25:33 +0300
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/admin (1.8ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:33 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:33 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:33 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:33 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:33 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:33 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:33 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:25:33 +0300
+^C[2014-04-30 23:48:08] INFO  going to shutdown ...
+[2014-04-30 23:48:08] INFO  WEBrick::HTTPServer#start done.
+Exiting
+learning_rails% clear
+
+learning_rails% rake secret
+rake aborted!
+Gem::LoadError: You have already activated rake 10.3.1, but your Gemfile requires rake 10.2.2. Prepending `bundle exec` to your command may solve this.
+/Users/Robosaad/Desktop/files/ProgDocs/ruby/lynda/learning_rails/config/boot.rb:4:in `<top (required)>'
+/Users/Robosaad/Desktop/files/ProgDocs/ruby/lynda/learning_rails/config/application.rb:1:in `<top (required)>'
+/Users/Robosaad/Desktop/files/ProgDocs/ruby/lynda/learning_rails/Rakefile:4:in `<top (required)>'
+(See full trace by running task with --trace)
+learning_rails% bundle exec rake secret
+5ed1a89e382bc06b0d3c83a737bf8d52c63bede8b4f31ead8ac95ec7673b82b0c08364d91a6a14f99ce1b982fc04e63185f6d08e1397612d7629ca234c42ab49
+learning_rails% rails server
+=> Booting WEBrick
+=> Rails 4.0.4 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2014-04-30 23:58:49] INFO  WEBrick 1.3.1
+[2014-04-30 23:58:49] INFO  ruby 2.1.0 (2013-09-22) [x86_64-darwin13.0.0]
+[2014-04-30 23:58:49] INFO  WEBrick::HTTPServer#start: pid=99509 port=3000
+
+
+Started GET "/admin" for 127.0.0.1 at 2014-04-30 23:58:56 +0300
+  ActiveRecord::SchemaMigration Load (0.3ms)  SELECT `schema_migrations`.* FROM `schema_migrations`
+Processing by AccessController#index as HTML
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 22ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:58:56 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (3.8ms)
+Completed 200 OK in 65ms (Views: 64.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:58:56 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:58:56 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:58:56 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:58:56 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:58:56 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:58:56 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:58:56 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:58:56 +0300
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2014-04-30 23:59:05 +0300
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XAsD8hJ02fmx3aypUVU7iN8UFVza5LB7t2dUIDaktOE=", "username"=>"satza", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  AdminUser Load (0.4ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`username` = 'satza' ORDER BY `admin_users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 139ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2014-04-30 23:59:05 +0300
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/admin (2.1ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:05 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:05 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:05 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:05 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:05 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:05 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:05 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:05 +0300
+
+
+Started GET "/access/logout" for 127.0.0.1 at 2014-04-30 23:59:09 +0300
+Processing by AccessController#logout as HTML
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:59:09 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.2ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:09 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:09 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:09 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:09 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:09 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:09 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:09 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:09 +0300
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:59:12 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.4ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:12 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:12 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:12 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:12 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:12 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:12 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:12 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:12 +0300
+
+
+Started GET "/access/logout" for 127.0.0.1 at 2014-04-30 23:59:18 +0300
+Processing by AccessController#logout as HTML
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:59:18 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.1ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:18 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:18 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:18 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:18 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:18 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:18 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:18 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:18 +0300
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:59:21 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.8ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:21 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:22 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:22 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:22 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:22 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:22 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:22 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:22 +0300
+
+
+Started GET "/access/" for 127.0.0.1 at 2014-04-30 23:59:25 +0300
+Processing by AccessController#index as HTML
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-04-30 23:59:25 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.9ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:25 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:25 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:25 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:25 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:25 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:25 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:25 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-04-30 23:59:25 +0300
+
+
+Started GET "/subjects" for 127.0.0.1 at 2014-05-01 00:02:39 +0300
+Processing by SubjectsController#index as HTML
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-05-01 00:02:39 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.8ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:39 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:39 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:39 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:39 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:39 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:39 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:39 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:39 +0300
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2014-05-01 00:02:41 +0300
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XAsD8hJ02fmx3aypUVU7iN8UFVza5LB7t2dUIDaktOE=", "username"=>"", "password"=>"[FILTERED]", "commit"=>"Log In"}
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-05-01 00:02:41 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.2ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:42 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:42 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:42 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:42 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:42 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:42 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:42 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:42 +0300
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2014-05-01 00:02:49 +0300
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XAsD8hJ02fmx3aypUVU7iN8UFVza5LB7t2dUIDaktOE=", "username"=>"satza", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  AdminUser Load (0.6ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`username` = 'satza' ORDER BY `admin_users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 146ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2014-05-01 00:02:49 +0300
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/admin (1.1ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:49 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:49 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:49 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:49 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:49 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:49 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:49 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:49 +0300
+
+
+Started GET "/subjects" for 127.0.0.1 at 2014-05-01 00:02:52 +0300
+Processing by SubjectsController#index as HTML
+   (0.3ms)  SELECT COUNT(*) FROM `subjects`
+  Subject Load (0.4ms)  SELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC
+   (0.4ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 1
+   (0.3ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 2
+   (0.3ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 4
+  Rendered subjects/index.html.erb within layouts/admin (101.4ms)
+Completed 200 OK in 116ms (Views: 66.6ms | ActiveRecord: 41.2ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:52 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:52 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:52 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:52 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:52 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:52 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:52 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-05-01 00:02:52 +0300
+
+
+Started GET "/assets/plus_sign.png" for 127.0.0.1 at 2014-05-01 00:02:52 +0300
+
+
+Started GET "/pages" for 127.0.0.1 at 2014-05-01 00:02:56 +0300
+Processing by PagesController#index as HTML
+  Page Load (0.5ms)  SELECT `pages`.* FROM `pages` ORDER BY pages.position ASC
+  Subject Load (0.4ms)  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1
+  Rendered pages/index.html.erb within layouts/admin (30.8ms)
+Completed 500 Internal Server Error in 35ms
+
+ActionView::Template::Error (uninitialized constant Page::Section):
+    19:         <td><%= page.name %></td>
+    20:         <td class="center"><%= page.permalink %></td>
+    21:         <td class="center"><%= status_tag(page.visible) %></td>
+    22:         <td class="center"><%= page.sections.size %></td>
+    23:         <td class="actions">
+    24:           <%= link_to("Show", {:action => 'show', :id => page.id}, :class => 'action show') %>
+    25:           <%= link_to("Edit", {:action => 'edit', :id => page.id}, :class => 'action edit') %>
+  app/views/pages/index.html.erb:22:in `block in _app_views_pages_index_html_erb__524667716847911152_70324953971120'
+  app/views/pages/index.html.erb:15:in `_app_views_pages_index_html_erb__524667716847911152_70324953971120'
+
+
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.7ms)
+
+
+Started GET "/sections" for 127.0.0.1 at 2014-05-01 00:03:01 +0300
+Processing by SectionsController#index as HTML
+Completed 500 Internal Server Error in 6ms
+
+NameError (uninitialized constant Section::CONTENT_TYPE):
+  app/models/section.rb:10:in `<class:Section>'
+  app/models/section.rb:1:in `<top (required)>'
+  app/controllers/sections_controller.rb:8:in `index'
+
+
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.5ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/actionpack-4.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2014-05-01 00:03:50 +0300
+Processing by PagesController#index as HTML
+  Page Load (0.4ms)  SELECT `pages`.* FROM `pages` ORDER BY pages.position ASC
+  Subject Load (0.3ms)  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 1 LIMIT 1
+   (0.4ms)  SELECT COUNT(*) FROM `sections` WHERE `sections`.`page_id` = 2
+  Subject Load (0.4ms)  SELECT `subjects`.* FROM `subjects` WHERE `subjects`.`id` = 2 LIMIT 1
+   (0.4ms)  SELECT COUNT(*) FROM `sections` WHERE `sections`.`page_id` = 3
+   (0.3ms)  SELECT COUNT(*) FROM `sections` WHERE `sections`.`page_id` = 4
+  Rendered pages/index.html.erb within layouts/admin (59.7ms)
+Completed 200 OK in 85ms (Views: 54.3ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:50 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:50 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:50 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:50 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:50 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:50 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:50 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:50 +0300
+
+
+Started GET "/sections" for 127.0.0.1 at 2014-05-01 00:03:52 +0300
+Processing by SectionsController#index as HTML
+  Section Load (0.4ms)  SELECT `sections`.* FROM `sections` ORDER BY sections.position ASC
+  Rendered sections/index.html.erb within layouts/admin (18.4ms)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:52 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:52 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:52 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:52 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:52 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:52 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:52 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:52 +0300
+
+
+Started GET "/access/logout" for 127.0.0.1 at 2014-05-01 00:03:57 +0300
+Processing by AccessController#logout as HTML
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-05-01 00:03:57 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.6ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:57 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:57 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:57 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:57 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:57 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:57 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:57 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-05-01 00:03:57 +0300
+
+
+Started GET "/pages" for 127.0.0.1 at 2014-05-01 00:04:00 +0300
+Processing by PagesController#index as HTML
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2014-05-01 00:04:00 +0300
+Processing by PagesController#index as HTML
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-05-01 00:04:01 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.9ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:01 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:01 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:01 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:01 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:01 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:01 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:01 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:01 +0300
+
+
+Started GET "/sections" for 127.0.0.1 at 2014-05-01 00:04:04 +0300
+Processing by SectionsController#index as HTML
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sections" for 127.0.0.1 at 2014-05-01 00:04:04 +0300
+Processing by SectionsController#index as HTML
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-05-01 00:04:04 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.7ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:04 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:04 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:04 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:04 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:04 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:04 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:04 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-05-01 00:04:04 +0300
+^C[2014-05-01 00:21:29] INFO  going to shutdown ...
+[2014-05-01 00:21:29] INFO  WEBrick::HTTPServer#start done.
+Exiting
+learning_rails% rails server
+=> Booting WEBrick
+=> Rails 4.0.4 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2014-05-01 00:32:54] INFO  WEBrick 1.3.1
+[2014-05-01 00:32:54] INFO  ruby 2.1.0 (2013-09-22) [x86_64-darwin13.0.0]
+[2014-05-01 00:32:54] INFO  WEBrick::HTTPServer#start: pid=319 port=3000
+
+
+Started POST "/access/attempt_login" for 127.0.0.1 at 2014-05-01 00:33:07 +0300
+  ActiveRecord::SchemaMigration Load (0.4ms)  SELECT `schema_migrations`.* FROM `schema_migrations`
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XAsD8hJ02fmx3aypUVU7iN8UFVza5LB7t2dUIDaktOE=", "username"=>"satza", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  AdminUser Load (0.5ms)  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`username` = 'satza' ORDER BY `admin_users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 166ms (ActiveRecord: 20.8ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2014-05-01 00:33:08 +0300
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/admin (2.9ms)
+Completed 200 OK in 65ms (Views: 63.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:08 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:08 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:08 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:08 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:08 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:08 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:08 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:08 +0300
+
+
+Started GET "/admin" for 127.0.0.1 at 2014-05-01 00:33:24 +0300
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/admin (1.7ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:24 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:24 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:24 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:24 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:24 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:24 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:24 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:24 +0300
+
+
+Started GET "/admin" for 127.0.0.1 at 2014-05-01 00:33:26 +0300
+Processing by AccessController#index as HTML
+  Rendered access/index.html.erb within layouts/admin (0.9ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:26 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:26 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:26 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:26 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:26 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:26 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:26 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:26 +0300
+
+
+Started GET "/subjects" for 127.0.0.1 at 2014-05-01 00:33:28 +0300
+Processing by SubjectsController#index as HTML
+   (7.1ms)  SELECT COUNT(*) FROM `subjects`
+  Subject Load (1.2ms)  SELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC
+   (0.6ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 1
+   (0.4ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 2
+   (0.3ms)  SELECT COUNT(*) FROM `pages` WHERE `pages`.`subject_id` = 4
+  Rendered subjects/index.html.erb within layouts/admin (114.1ms)
+Completed 200 OK in 125ms (Views: 71.1ms | ActiveRecord: 49.3ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:28 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:28 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:28 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:28 +0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:28 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:28 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:28 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:28 +0300
+
+
+Started GET "/assets/plus_sign.png" for 127.0.0.1 at 2014-05-01 00:33:28 +0300
+
+
+Started GET "/access/logout" for 127.0.0.1 at 2014-05-01 00:33:30 +0300
+Processing by AccessController#logout as HTML
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for 127.0.0.1 at 2014-05-01 00:33:30 +0300
+Processing by AccessController#login as HTML
+  Rendered access/login.html.erb within layouts/admin (1.9ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:30 +0300
+
+
+Started GET "/assets/demo.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:30 +0300
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:30 +0300
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:30 +0300
+
+
+Started GET "/assets/public.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:30 +0300
+
+
+Started GET "/assets/access.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:30 +0300
+
+
+Started GET "/assets/sections.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:30 +0300
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-05-01 00:33:30 +0300
+^[[A^[[B^C[2014-05-01 00:34:49] INFO  going to shutdown ...
+[2014-05-01 00:34:49] INFO  WEBrick::HTTPServer#start done.
+Exiting
+learning_rails% cd ../../..
+progdocs% cd ../omnituts/omnituts
+omnituts% bundle exec rake db:migrate
+omnituts% bundle exec rake db:migrate:status
+
+database: omnituts_development
+
+ Status   Migration ID    Migration Name
+--------------------------------------------------
+   up     20140421122645  Create admins
+   up     20140421122705  Create courses
+   up     20140421122715  Create tutorials
+   up     20140421122736  Create users
+   up     20140421164245  ********** NO FILE **********
+   up     20140421204938  Create course enrollments
+
+omnituts% bundle exec rake db:migrate:redo VERSION=20140421122645
+== 20140421122645 CreateAdmins: reverting =====================================
+-- drop_table(:admins)
+   -> 0.0045s
+== 20140421122645 CreateAdmins: reverted (0.0046s) ============================
+
+== 20140421122645 CreateAdmins: migrating =====================================
+-- create_table(:admins)
+   -> 0.0331s
+-- add_index("admins", "username")
+   -> 0.0173s
+-- add_index("admins", "email")
+   -> 0.0161s
+== 20140421122645 CreateAdmins: migrated (0.0669s) ============================
+
+omnituts% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> Admin.all
+  Admin Load (0.4ms)  SELECT `admins`.* FROM `admins`
+=> #<ActiveRecord::Relation []>
+irb(main):002:0> exit
+omnituts% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> me = Admin.new(:username => 'satza', :first_name => 'Saad Atif', :last_name => 'Zahoor', :email => 'saad@omnituts.com')
+SyntaxError: /Users/Robosaad/Desktop/files/omnituts/omnituts/app/models/admin.rb:9: syntax error, unexpected =>, expecting keyword_end
+                       :uniqueness => true
+                                     ^
+/Users/Robosaad/Desktop/files/omnituts/omnituts/app/models/admin.rb:13: syntax error, unexpected =>, expecting keyword_end
+                    :confirmation => true
+                                    ^
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:424:in `load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:424:in `block in load_file'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:616:in `new_constants_in'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:423:in `load_file'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:324:in `require_or_load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:463:in `load_missing_constant'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:184:in `const_missing'
+	from (irb):1
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:90:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:9:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+irb(main):002:0> me = Admin.new(:username => 'satza', :first_name => 'Saad Atif', :last_name => 'Zahoor', :email => 'saad@omnituts.com')
+SyntaxError: /Users/Robosaad/Desktop/files/omnituts/omnituts/app/models/admin.rb:9: syntax error, unexpected =>, expecting keyword_end
+                       :uniqueness => true
+                                     ^
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:424:in `load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:424:in `block in load_file'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:616:in `new_constants_in'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:423:in `load_file'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:324:in `require_or_load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:463:in `load_missing_constant'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:184:in `const_missing'
+	from (irb):2
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:90:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:9:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+irb(main):003:0> me = Admin.new(:username => 'satza', :first_name => 'Saad Atif', :last_name => 'Zahoor', :email => 'saad@omnituts.com')exit
+SyntaxError: (irb):3: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:90:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:9:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+irb(main):004:0> exit
+omnituts% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> me = Admin.new(:username => 'satza', :first_name => 'Saad Atif', :last_name => 'Zahoor', :email => 'saad@omnituts.com')
+SyntaxError: /Users/Robosaad/Desktop/files/omnituts/omnituts/app/models/admin.rb:9: syntax error, unexpected =>, expecting keyword_end
+                       :uniqueness => true
+                                     ^
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:424:in `load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:424:in `block in load_file'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:616:in `new_constants_in'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:423:in `load_file'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:324:in `require_or_load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:463:in `load_missing_constant'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:184:in `const_missing'
+	from (irb):1
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:90:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:9:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+irb(main):002:0> exit
+omnituts% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> me = Admin.new(:username => 'satza', :first_name => 'Saad Atif', :last_name => 'Zahoor', :email => 'saad@omnituts.com')
+=> #<Admin id: nil, username: "satza", password: nil, first_name: "Saad Atif", last_name: "Zahoor", email: "saad@omnituts.com", num_of_tuts: 0, created_at: nil, updated_at: nil>
+irb(main):002:0> me.valid?
+  Admin Exists (0.5ms)  SELECT 1 AS one FROM `admins` WHERE `admins`.`username` = BINARY 'satza' LIMIT 1
+=> true
+irb(main):003:0> me.save
+   (0.4ms)  BEGIN
+  Admin Exists (0.5ms)  SELECT 1 AS one FROM `admins` WHERE `admins`.`username` = BINARY 'satza' LIMIT 1
+  SQL (2.6ms)  INSERT INTO `admins` (`created_at`, `email`, `first_name`, `last_name`, `updated_at`, `username`) VALUES ('2014-04-30 21:41:57', 'saad@omnituts.com', 'Saad Atif', 'Zahoor', '2014-04-30 21:41:57', 'satza')
+   (0.5ms)  COMMIT
+=> true
+irb(main):004:0> exit
+omnituts% clear
+
+omnituts% rails generate migration AddPasswordDigestToAdmins
+      invoke  active_record
+      create    db/migrate/20140430214250_add_password_digest_to_admins.rb
+omnituts% bundle exec rake db:migrate
+== 20140430214250 AddPasswordDigestToAdmins: migrating ========================
+-- remove_column(:admins, :password)
+   -> 0.0268s
+-- add_column(:admins, :password_digest, :string)
+   -> 0.0315s
+== 20140430214250 AddPasswordDigestToAdmins: migrated (0.0585s) ===============
+
+omnituts% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> me = Admin.find(1)
+You don't have bcrypt installed in your application. Please add it to your Gemfile and run bundle install
+LoadError: cannot load such file -- bcrypt
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:229:in `require'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:229:in `block in require'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:212:in `block in load_dependency'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:616:in `new_constants_in'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:212:in `load_dependency'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:229:in `require'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activemodel-4.0.4/lib/active_model/secure_password.rb:47:in `has_secure_password'
+	from /Users/Robosaad/Desktop/files/omnituts/omnituts/app/models/admin.rb:3:in `<class:Admin>'
+	from /Users/Robosaad/Desktop/files/omnituts/omnituts/app/models/admin.rb:1:in `<top (required)>'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:424:in `load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:424:in `block in load_file'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:616:in `new_constants_in'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:423:in `load_file'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:324:in `require_or_load'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:463:in `load_missing_constant'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/activesupport-4.0.4/lib/active_support/dependencies.rb:184:in `const_missing'
+	from (irb):1
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:90:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands/console.rb:9:in `start'
+	from /Users/Robosaad/.rbenv/versions/2.1.0-preview1/lib/ruby/gems/2.1.0/gems/railties-4.0.4/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/exit
+omnituts% bundle install
+Resolving dependencies...
+Using rake (10.3.1)
+Using i18n (0.6.9)
+Using minitest (4.7.5)
+Using multi_json (1.9.2)
+Using thread_safe (0.3.3)
+Using tzinfo (0.3.39)
+Using activesupport (4.0.4)
+Using builder (3.1.4)
+Using erubis (2.7.0)
+Using rack (1.5.2)
+Using rack-test (0.6.2)
+Using actionpack (4.0.4)
+Using mime-types (1.25.1)
+Using polyglot (0.3.4)
+Using treetop (1.4.15)
+Using mail (2.5.4)
+Using actionmailer (4.0.4)
+Using activemodel (4.0.4)
+Using activerecord-deprecated_finders (1.0.3)
+Using arel (4.0.2)
+Using activerecord (4.0.4)
+Using bcrypt (3.1.7)
+Using bundler (1.5.1)
+Using hike (1.2.3)
+Using json (1.8.1)
+Using mysql2 (0.3.15)
+Using thor (0.19.1)
+Using railties (4.0.4)
+Using tilt (1.4.1)
+Using sprockets (2.11.0)
+Using sprockets-rails (2.0.1)
+Using rails (4.0.4)
+Using rdoc (4.1.1)
+Using sass (3.2.19)
+Using sass-rails (4.0.3)
+Using sdoc (0.4.0)
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+omnituts% rails console
+Loading development environment (Rails 4.0.4)
+irb(main):001:0> me = Admin.find(1)
+  Admin Load (0.3ms)  SELECT `admins`.* FROM `admins` WHERE `admins`.`id` = 1 LIMIT 1
+=> #<Admin id: 1, username: "satza", first_name: "Saad Atif", last_name: "Zahoor", email: "saad@omnituts.com", num_of_tuts: 0, created_at: "2014-04-30 21:41:57", updated_at: "2014-04-30 21:41:57", password_digest: nil>
+irb(main):002:0> me.password = 'saad_Zahoor1234'
+=> "saad_Zahoor1234"
+irb(main):003:0> me.password_digest
+=> "$2a$10$lf45dtbEtOeLK7j8ukVuSuMqQ8VnC2dq6WPZ7uAYqEDFQ6PmXlTqe"
+irb(main):004:0> me.valid?
+  Admin Exists (0.6ms)  SELECT 1 AS one FROM `admins` WHERE (`admins`.`username` = BINARY 'satza' AND `admins`.`id` != 1) LIMIT 1
+=> false
+irb(main):005:0> me.errors.full_messages
+=> ["Password confirmation can't be blank"]
+irb(main):006:0> me.password_confirmation = 'saad_Zahoor1234'
+=> "saad_Zahoor1234"
+irb(main):007:0> me.valid?
+  Admin Exists (0.7ms)  SELECT 1 AS one FROM `admins` WHERE (`admins`.`username` = BINARY 'satza' AND `admins`.`id` != 1) LIMIT 1
+=> true
+irb(main):008:0> me.authenticate('saad_Zahoor1234')
+=> #<Admin id: 1, username: "satza", first_name: "Saad Atif", last_name: "Zahoor", email: "saad@omnituts.com", num_of_tuts: 0, created_at: "2014-04-30 21:41:57", updated_at: "2014-04-30 21:41:57", password_digest: "$2a$10$lf45dtbEtOeLK7j8ukVuSuMqQ8VnC2dq6WPZ7uAYqEDF...">
+irb(main):009:0> me.save
+   (0.4ms)  BEGIN
+  Admin Exists (0.6ms)  SELECT 1 AS one FROM `admins` WHERE (`admins`.`username` = BINARY 'satza' AND `admins`.`id` != 1) LIMIT 1
+  SQL (0.5ms)  UPDATE `admins` SET `password_digest` = '$2a$10$lf45dtbEtOeLK7j8ukVuSuMqQ8VnC2dq6WPZ7uAYqEDFQ6PmXlTqe', `updated_at` = '2014-04-30 21:47:11' WHERE `admins`.`id` = 1
+   (1.7ms)  COMMIT
+=> true
+irb(main):010:0> exit
+omnituts% clear
+
+omnituts% rails generate controller Manage index login
+      create  app/controllers/manage_controller.rb
+       route  get "manage/login"
+       route  get "manage/index"
+      invoke  erb
+      create    app/views/manage
+      create    app/views/manage/index.html.erb
+      create    app/views/manage/login.html.erb
+      invoke  test_unit
+      create    test/controllers/manage_controller_test.rb
+      invoke  helper
+      create    app/helpers/manage_helper.rb
+      invoke    test_unit
+      create      test/helpers/manage_helper_test.rb
+      invoke  assets
+      invoke    js
+      create      app/assets/javascripts/manage.js
+      invoke    scss
+      create      app/assets/stylesheets/manage.css.scss
+omnituts% 
+
+
+
+

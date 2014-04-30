@@ -1,9 +1,10 @@
+<%= error_messages_for(@chemtut) %> 
 <%= form_for(:chemtut, :url => {:action => 'create'}) do |f| %>
-  <%= f.label(:course_id, "Course:", :class => 'form-label') %>
+  <!--<%= f.label(:course_id, "Course:", :class => 'form-label') %>
   <br />
   <%= f.select(:course_id, @courses.map { |c| [c.course_name, c.id] }) %><i class="fa fa-sort-asc dropdown-arrow"></i>
   <br />
-  <br />
+  <br />-->
   <%= f.label(:tut_title, "Tutorial Title: ", :class => 'form-label') %>
   <br />
   <%= f.text_field(:tut_title) %>
@@ -17,4 +18,4 @@
   <%= submit_tag("Create Tutorial", :class => 'form-submit-button') %>
 <% end %>
 <br />
-<%= link_to("Back to tutorials", {:action => 'index'}, :class => 'tut-back-link') %>
+<%= link_to("Back to tutorials", {:controller => 'chemistry', :action => 'index'}, :class => 'tut-back-link') %>

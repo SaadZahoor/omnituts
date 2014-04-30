@@ -10,6 +10,9 @@ gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
+# Use FriendlyId for better URLs
+# gem 'friendly_id', '~> 5.0.0'
+
 # Use Mercury Editor for editing pages
 # gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
 
@@ -41,7 +44,7 @@ end
 # s.extra_rdoc_files  = ["LICENSE", "POST_INSTALL"]
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'

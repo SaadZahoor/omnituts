@@ -2,8 +2,8 @@ class CreateAdmins < ActiveRecord::Migration
 
   def up
     create_table :admins do |t|
-      t.string "username", :null => false, :limit => 30
-      t.string "password", :null => false
+      t.string "username", :limit => 30
+      t.string "password"
       t.string "first_name", :default => "Unspecified."
       t.string "last_name", :default => "Unspecified."
       t.string "email", :default => "Unspecified."
